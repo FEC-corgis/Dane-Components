@@ -6,7 +6,6 @@ interface User {
   identifyVerified: boolean;
   isSuperHost: boolean;
   avatar: string; // link provided by s3 bucket
-  language: string;
   livesIn: string;
   joinedOn: Date;
 }
