@@ -8,8 +8,8 @@ interface HostedBy {
   propertyId: number;
 }
 
-interface CohostedBy {
+interface CoHost {
   id: number;
-  userId: number;
+  hostId: number;
   hostedById: number;
 }

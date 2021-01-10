@@ -1,4 +1,4 @@
-interface User {
+interface Host {
   id: number;
   name: string;
   about: string;
