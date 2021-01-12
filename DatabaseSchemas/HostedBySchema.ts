@@ -4,7 +4,7 @@ interface HostedBy {
   responseRate: number;
   responseTime: number;
   showLanguage: boolean;
-  userId: number;
+  hostId: number;
   propertyId: number;
 }
 
