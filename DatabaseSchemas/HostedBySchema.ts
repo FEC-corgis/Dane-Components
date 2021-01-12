@@ -4,12 +4,12 @@ interface HostedBy {
   responseRate: number;
   responseTime: number;
   showLanguage: boolean;
-  userId: number;
+  hostId: number;
   propertyId: number;
 }
 
-interface CohostedBy {
+interface CoHost {
   id: number;
-  userId: number;
+  hostId: number;
   hostedById: number;
 }
