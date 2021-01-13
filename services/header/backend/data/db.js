@@ -1,4 +1,5 @@
 const { Sequelize } = require('sequelize');
+const Property = require('../models/Property');
 
 const sequelize = new Sequelize(
   'Header',
@@ -13,7 +14,6 @@ const sequelize = new Sequelize(
 (async () => {
   try {
     await sequelize.authenticate();
-    await sequelize.sync();
   } catch (error) {
     console.log('ERROR IN db.js', error);
   }
