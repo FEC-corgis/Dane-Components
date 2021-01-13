@@ -14,6 +14,7 @@ const PhotoContainer = () => {
   useEffect(() => {
     dispatch(handleGetPhotos());
   }, []);
+
   return photos.length ? (
     <Container>
       <MainPhoto link={photos[0].link} />
