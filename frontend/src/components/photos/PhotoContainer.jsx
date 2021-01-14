@@ -18,21 +18,33 @@ const PhotoContainer = () => {
   }, []);
 
   return photos.length ? (
-    <Container>
-      <MainPhoto link={photos[0].link} />
-      <MiddlePhotos photo1={photos[1]} photo2={photos[3]} />
-      <EndPhotos photo1={photos[2]} photo2={photos[4]} />
-    </Container>
+    <Flex>
+      <Grid>
+        <MainPhoto link={photos[0].link} />
+        <MiddlePhotos photo1={photos[1]} photo2={photos[3]} />
+        <EndPhotos photo1={photos[2]} photo2={photos[4]} />
+      </Grid>
+    </Flex>
   ) : null;
 };
 
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: 564px 274px 274px;
-  grid-gap: 8px;
-  margin-left: 390px;
-  margin-right: 650px;
+const Flex = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 0 80px;
 `;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 8px;
+  max-width: 1130px;
+  max-height: 504px;
+`;
+
+// margin-left: 390px;
+// margin-right: 650px;
 // justify-items: center;
 /**display: flex;
   justify-content: flex-start;
