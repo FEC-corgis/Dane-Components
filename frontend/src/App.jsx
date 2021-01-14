@@ -12,7 +12,7 @@ const App = () => {
     }
   };
   return (
-    <div>
+    <div style={{ marginTop: '66px' }}>
       <PhotoContainer />
     </div>
   );

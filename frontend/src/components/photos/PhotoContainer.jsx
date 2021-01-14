@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import MainPhoto from './MainPhoto';
+import MiddlePhotos from './MiddlePhotos';
+import EndPhotos from './EndPhotos';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -18,6 +20,8 @@ const PhotoContainer = () => {
   return photos.length ? (
     <Container>
       <MainPhoto link={photos[0].link} />
+      <MiddlePhotos photo1={photos[1]} photo2={photos[3]} />
+      <EndPhotos photo1={photos[2]} photo2={photos[4]} />
     </Container>
   ) : null;
 };
