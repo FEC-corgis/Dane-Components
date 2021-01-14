@@ -27,10 +27,15 @@ const PhotoContainer = () => {
 };
 
 const Container = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 564px 274px 274px;
+  grid-gap: 8px;
+  margin-left: 390px;
+  margin-right: 650px;
+`;
+// justify-items: center;
+/**display: flex;
   justify-content: flex-start;
   margin: 0 20%;
-  border-radius: 1rem;
-`;
-
+  border-radius: 1rem; */
 export default PhotoContainer;

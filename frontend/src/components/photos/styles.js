@@ -1,40 +1,44 @@
 import styled from 'styled-components';
 
-export const MainContainer = styled.div`
+export const LeftContainer = styled.div`
   height: 504px;
-  width: 564px;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
   overflow: hidden;
 `;
 
-export const MainImg = styled.img`
-  height: 100%;
+export const LeftImg = styled.img`
   margin-left: -95px;
+  height: 100%;
+`;
+
+export const MiddleImg = styled.img`
+  margin-left: -55px;
+  height: 100%;
 `;
 
 export const Img = styled.img`
-  height: 100%;
   margin-left: -55px;
+  height: 100%;
 `;
 
-export const Parent = styled.div`
-  width: 274px;
+export const MiddleParent = styled.div`
   height: 504px;
-  margin-left: 8px;
+`;
+
+export const EndParent = styled.div`
+  height: 504px;
 `;
 
 export const ContainerTop = styled.div`
-  width: 274px;
-  height: 252px;
-  margin-bottom: 8px;
   overflow: hidden;
+  margin-bottom: 8px;
+  height: 252px;
 `;
 
 export const ContainerBottom = styled.div`
-  width: 274px;
-  height: 244px;
   overflow: hidden;
+  height: 244px;
 `;
 
 export const ContainerTopRight = styled(ContainerTop)`

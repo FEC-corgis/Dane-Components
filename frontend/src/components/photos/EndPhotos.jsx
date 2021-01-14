@@ -1,16 +1,21 @@
 import React from 'react';
-import { Img, Parent, ContainerTopRight, ContainerBottomRight } from './styles';
+import {
+  Img,
+  EndParent,
+  ContainerTopRight,
+  ContainerBottomRight,
+} from './styles';
 
 const EndPhotos = (props) => {
   return (
-    <Parent>
+    <EndParent>
       <ContainerTopRight>
         <Img src={props.photo1.link} alt={'house'} />
       </ContainerTopRight>
       <ContainerBottomRight>
         <Img src={props.photo2.link} alt={'house'} />
       </ContainerBottomRight>
-    </Parent>
+    </EndParent>
   );
 };
 

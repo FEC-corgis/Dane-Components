@@ -1,11 +1,11 @@
 import React from 'react';
-import { MainContainer, MainImg } from './styles';
+import { LeftContainer, LeftImg } from './styles';
 
 const MainPhoto = (props) => {
   return (
-    <MainContainer>
-      <MainImg src={props.link} alt={'house'} />
-    </MainContainer>
+    <LeftContainer>
+      <LeftImg src={props.link} alt={'house'} />
+    </LeftContainer>
   );
 };
 

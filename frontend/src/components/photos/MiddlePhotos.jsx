@@ -1,16 +1,21 @@
 import React from 'react';
-import { Img, Parent, ContainerTop, ContainerBottom } from './styles';
+import {
+  MiddleImg,
+  MiddleParent,
+  ContainerTop,
+  ContainerBottom,
+} from './styles';
 
 const MiddlePhotos = (props) => {
   return (
-    <Parent>
+    <MiddleParent>
       <ContainerTop>
-        <Img src={props.photo1.link} alt={'house'} />
+        <MiddleImg src={props.photo1.link} alt={'house'} />
       </ContainerTop>
       <ContainerBottom>
-        <Img src={props.photo2.link} alt={'house'} />
+        <MiddleImg src={props.photo2.link} alt={'house'} />
       </ContainerBottom>
-    </Parent>
+    </MiddleParent>
   );
 };
 
