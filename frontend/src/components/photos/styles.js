@@ -8,6 +8,7 @@ export const LeftContainer = styled.div`
   grid-column-end: span 2;
   grid-row-start: 1;
   grid-row-end: span 2;
+  cursor: pointer;
 `;
 
 export const ContainerTop = styled.div`
@@ -16,6 +17,7 @@ export const ContainerTop = styled.div`
   grid-column-end: span 1;
   grid-row-start: 1;
   grid-row-end: span 1;
+  cursor: pointer;
 `;
 
 export const ContainerBottom = styled.div`
@@ -24,6 +26,7 @@ export const ContainerBottom = styled.div`
   grid-column-end: span 1;
   grid-row-start: 2;
   grid-row-end: span 1;
+  cursor: pointer;
 `;
 
 export const ContainerTopRight = styled.div`
@@ -33,6 +36,7 @@ export const ContainerTopRight = styled.div`
   grid-column-end: span 1;
   grid-row-start: 1;
   grid-row-end: span 1;
+  cursor: pointer;
 `;
 
 export const ContainerBottomRight = styled.div`
@@ -42,6 +46,7 @@ export const ContainerBottomRight = styled.div`
   grid-column-end: span 1;
   grid-row-start: 2;
   grid-row-end: span 1;
+  cursor: pointer;
 `;
 
 export const LeftImg = styled.img`
