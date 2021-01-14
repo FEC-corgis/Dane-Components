@@ -1,12 +1,29 @@
 import React from 'react';
-import { LeftContainer, LeftImg } from './styles';
+import styled from 'styled-components';
 
-const MainPhoto = (props) => {
+const JustMain = (props) => {
   return (
-    <LeftContainer>
-      <LeftImg src={props.link} alt={'house'} />
-    </LeftContainer>
+    <Flex>
+      <MainContainer>
+        <MainImg src={props.link} alt={'house'} />
+      </MainContainer>
+    </Flex>
   );
 };
 
-export default MainPhoto;
+const Flex = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const MainContainer = styled.div`
+  width: 743px;
+`;
+
+const MainImg = styled.img`
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+`;
+
+export default JustMain;

@@ -64,3 +64,8 @@ export const EndImg = styled.img`
   width: 132.5%;
   object-fit: cover;
 `;
+
+export const Flex = styled.div`
+  display: flex;
+  justify-content: center;
+`;
