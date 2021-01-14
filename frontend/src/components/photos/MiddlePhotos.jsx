@@ -4,10 +4,10 @@ import { MiddleImg, ContainerTop, ContainerBottom } from './styles';
 const MiddlePhotos = (props) => {
   return (
     <React.Fragment>
-      <ContainerTop>
+      <ContainerTop onClick={props.handleClick}>
         <MiddleImg src={props.photo1.link} alt={'house'} />
       </ContainerTop>
-      <ContainerBottom>
+      <ContainerBottom onClick={props.handleClick}>
         <MiddleImg src={props.photo2.link} alt={'house'} />
       </ContainerBottom>
     </React.Fragment>

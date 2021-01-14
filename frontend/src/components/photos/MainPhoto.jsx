@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const JustMain = (props) => {
   return (
     <Flex>
-      <MainContainer>
+      <MainContainer onClick={props.handleClick}>
         <MainImg src={props.link} alt={'house'} />
       </MainContainer>
     </Flex>
