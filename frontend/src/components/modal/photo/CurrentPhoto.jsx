@@ -8,10 +8,7 @@ const CurrentPhoto = (props) => (
     <Container>
       <Image link={props.current.link} />
       <Description>
-        <span>
-          Welcome to South Lake Tahoe! This home is professionally managed by
-          TurnKey Vacation Rentals.
-        </span>
+        <span>{props.current.description}</span>
       </Description>
     </Container>
   </Flex>
