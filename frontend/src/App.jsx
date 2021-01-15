@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import PhotoContainer from './components/photos/PhotoContainer';
 
 const App = () => {
   const handleClick = async () => {
@@ -11,9 +12,8 @@ const App = () => {
     }
   };
   return (
-    <div>
-      <h1>Hosted By Service</h1>
-      <button onClick={handleClick}>Show</button>
+    <div style={{ marginTop: '66px' }}>
+      <PhotoContainer />
     </div>
   );
 };
