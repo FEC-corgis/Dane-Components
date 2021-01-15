@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import ModalNav from './nav/ModalNav';
-import Photo from './Photo';
+import CurrentPhoto from './CurrentPhoto';
 import DirectionButtons from './directionButtons/DirectionButtons';
 import { useSelector } from 'react-redux';
 import { getModalState } from '../../redux/slices/modal/modalSlice';
 
 const ModalContainer = () => {
-  const showModal = useSelector(getModalState);
+  const { showModal } = useSelector(getModalState);
 
   return (
     <Container style={{ bottom: showModal ? 0 : '-100vh' }}>
       <ModalNav />
-      <Photo />
+      <CurrentPhoto />
       <DirectionButtons />
     </Container>
   );

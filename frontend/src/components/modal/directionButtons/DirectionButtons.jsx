@@ -2,16 +2,15 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  getPhotoState,
-  setCurrentPhoto,
-} from '../../../redux/slices/photos/PhotoSlice';
+import { handleTransition } from '../../../redux/slices/modal/modalSlice';
+import { getPhotoState } from '../../../redux/slices/photos/PhotoSlice';
 
 const DirectionButtons = () => {
+  const dispatch = useDispatch();
   const [showLeft, setShowLeft] = useState(true);
   const [showRight, setShowRight] = useState(true);
+  const [mouseDown, setMouseDown] = useState(false);
   const { current, allPhotos } = useSelector(getPhotoState);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     if (allPhotos.length && allPhotos[current.id - 2] == null) {
@@ -28,17 +27,27 @@ const DirectionButtons = () => {
   }, [current]);
 
   const handleClick = (index) => {
-    dispatch(setCurrentPhoto(allPhotos[index]));
+    dispatch(handleTransition(allPhotos[index]));
   };
 
   return (
     <Container>
       <Flex>
         <Wrapper
-          style={{ visibility: !showLeft && 'hidden' }}
+          style={{
+            visibility: !showLeft && 'hidden',
+          }}
           onClick={() => handleClick(current.id - 2)}
+          onMouseDown={() => setMouseDown(true)}
+          onMouseUp={() => setMouseDown(false)}
+          onMouseLeave={() => setMouseDown(false)}
         >
-          <CircleLeft>
+          <CircleLeft
+            style={{
+              width: mouseDown && '43px',
+              height: mouseDown && '43px',
+            }}
+          >
             <IconSpan>
               <FaChevronLeft style={{ fontSize: '0.75rem' }} />
             </IconSpan>
@@ -47,8 +56,16 @@ const DirectionButtons = () => {
         <Wrapper
           style={{ visibility: !showRight && 'hidden' }}
           onClick={() => handleClick(current.id)}
+          onMouseDown={() => setMouseDown(true)}
+          onMouseUp={() => setMouseDown(false)}
+          onMouseLeave={() => setMouseDown(false)}
         >
-          <CircleRight>
+          <CircleRight
+            style={{
+              width: mouseDown && '43px',
+              height: mouseDown && '43px',
+            }}
+          >
             <IconSpan>
               <FaChevronRight style={{ fontSize: '0.75rem' }} />
             </IconSpan>

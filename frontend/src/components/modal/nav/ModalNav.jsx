@@ -4,19 +4,17 @@ import PhotoCount from './PhotoCount';
 import Icons from './Icons';
 import styled from 'styled-components';
 
-const ModalNav = () => {
-  return (
-    <NavSection>
-      <NavContainer>
-        <Nav>
-          <CloseButton />
-          <PhotoCount />
-          <Icons />
-        </Nav>
-      </NavContainer>
-    </NavSection>
-  );
-};
+const ModalNav = () => (
+  <NavSection>
+    <NavContainer>
+      <Nav>
+        <CloseButton />
+        <PhotoCount />
+        <Icons />
+      </Nav>
+    </NavContainer>
+  </NavSection>
+);
 
 const NavSection = styled.section`
   width: 100%;

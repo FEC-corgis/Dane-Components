@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import Image from './Image';
 import { useSelector } from 'react-redux';
 import { getPhotoState } from '../../redux/slices/photos/PhotoSlice';
 import { Flex } from '../photos/styles';
 
-const Photo = () => {
+const CurrentPhoto = () => {
   const { current } = useSelector(getPhotoState);
   return (
     <Flex>
       <Container>
-        {current && <Image src={current.link} alt={'house'} />}
+        {current && <Image link={current.link} />}
         <Description>
           <span>
             Welcome to South Lake Tahoe! This home is professionally managed by
@@ -26,11 +27,6 @@ const Container = styled.div`
   height: 720px;
 `;
 
-const Image = styled.img`
-  width: 100%;
-  max-height: 706px;
-`;
-
 const Description = styled.div`
   width: 100%;
   font-size: 1.2rem;
@@ -38,4 +34,4 @@ const Description = styled.div`
   margin: 10px;
 `;
 
-export default Photo;
+export default CurrentPhoto;
