@@ -26,11 +26,11 @@ const modalSlice = createSlice({
 export const { setShowModal, setShowPopup } = modalSlice.actions;
 export const getModalState = (state) => state.modal;
 
-export const handleTransition = (photo) => (dispatch) => {
+export const handleTransition = (photo, index) => (dispatch) => {
   dispatch(setShowPopup(false));
 
   setTimeout(() => {
-    dispatch(setCurrentPhoto(photo));
+    dispatch(setCurrentPhoto({ current: photo, currentIndex: index }));
     dispatch(setShowPopup(true));
   }, 150);
 };

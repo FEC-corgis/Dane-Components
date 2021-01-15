@@ -4,12 +4,12 @@ import PhotoCount from './PhotoCount';
 import Icons from './Icons';
 import styled from 'styled-components';
 
-const ModalNav = () => (
+const ModalNav = (props) => (
   <NavSection>
     <NavContainer>
       <Nav>
         <CloseButton />
-        <PhotoCount />
+        <PhotoCount {...props} />
         <Icons />
       </Nav>
     </NavContainer>

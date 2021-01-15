@@ -6,6 +6,7 @@ const photoSlice = createSlice({
   initialState: {
     allPhotos: [],
     current: null,
+    currentIndex: 0,
   },
   reducers: {
     setPhotos: (state, action) => {
@@ -17,7 +18,8 @@ const photoSlice = createSlice({
     setCurrentPhoto: (state, action) => {
       return {
         ...state,
-        current: action.payload,
+        current: action.payload.current,
+        currentIndex: action.payload.currentIndex,
       };
     },
   },
@@ -36,8 +38,8 @@ export const handleGetPhotos = () => async (dispatch) => {
 };
 
 export const handleFindCurrent = (photos, id) => (dispatch) => {
-  const photo = photos.find((item) => item.id === id);
-  dispatch(setCurrentPhoto(photo));
+  const currentIndex = photos.findIndex((photo) => photo.id === id);
+  dispatch(setCurrentPhoto({ current: photos[currentIndex], currentIndex }));
 };
 
 export default photoSlice.reducer;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
-import { getModalState } from '../../redux/slices/modal/modalSlice';
+import { getModalState } from '../../../redux/slices/modal/modalSlice';
 
 const Image = (props) => {
   const { showPopup } = useSelector(getModalState);
@@ -9,7 +9,6 @@ const Image = (props) => {
     <Popup showPopup={showPopup}>
       <div className="fade-in">
         <Img src={props.link} alt={'house'} />
-        {/* <Img src="http://placecorgi.com/250" /> */}
       </div>
     </Popup>
   );

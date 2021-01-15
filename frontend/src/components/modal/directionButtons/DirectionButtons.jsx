@@ -1,33 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { handleTransition } from '../../../redux/slices/modal/modalSlice';
-import { getPhotoState } from '../../../redux/slices/photos/PhotoSlice';
 
-const DirectionButtons = () => {
+const DirectionButtons = (props) => {
   const dispatch = useDispatch();
-  const [showLeft, setShowLeft] = useState(true);
-  const [showRight, setShowRight] = useState(true);
   const [mouseDown, setMouseDown] = useState(false);
-  const { current, allPhotos } = useSelector(getPhotoState);
-
-  useEffect(() => {
-    if (allPhotos.length && allPhotos[current.id - 2] == null) {
-      setShowLeft(false);
-    } else {
-      setShowLeft(true);
-    }
-
-    if (allPhotos.length && allPhotos[current.id] == null) {
-      setShowRight(false);
-    } else {
-      setShowRight(true);
-    }
-  }, [current]);
 
   const handleClick = (index) => {
-    dispatch(handleTransition(allPhotos[index]));
+    const photo = props.photos[index];
+    if (photo != null) {
+      dispatch(handleTransition(photo, index));
+    }
   };
 
   return (
@@ -35,9 +20,9 @@ const DirectionButtons = () => {
       <Flex>
         <Wrapper
           style={{
-            visibility: !showLeft && 'hidden',
+            visibility: props.index === 0 && 'hidden',
           }}
-          onClick={() => handleClick(current.id - 2)}
+          onClick={() => handleClick(props.index - 1)}
           onMouseDown={() => setMouseDown(true)}
           onMouseUp={() => setMouseDown(false)}
           onMouseLeave={() => setMouseDown(false)}
@@ -54,8 +39,10 @@ const DirectionButtons = () => {
           </CircleLeft>
         </Wrapper>
         <Wrapper
-          style={{ visibility: !showRight && 'hidden' }}
-          onClick={() => handleClick(current.id)}
+          style={{
+            visibility: props.index === props.photos.length - 1 && 'hidden',
+          }}
+          onClick={() => handleClick(props.index + 1)}
           onMouseDown={() => setMouseDown(true)}
           onMouseUp={() => setMouseDown(false)}
           onMouseLeave={() => setMouseDown(false)}
