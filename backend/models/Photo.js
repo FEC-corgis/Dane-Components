@@ -57,11 +57,11 @@ Photo.init(
       });
 
       const results = JSON.parse(JSON.stringify(res.response.results));
-      let propertyId = 1;
 
       for (let i = 0; i < results.length; i++) {
         const link = results[i].links.download;
         const id = i + 1;
+
         const filePath = join(
           __dirname,
           '..',
@@ -75,27 +75,21 @@ Photo.init(
 
           const uploadParams = {
             Bucket: 'fec-corgis',
-            Key: `houses/image${id}`,
+            Key: `houses/image/${id}`,
             Body: fileContent,
             ContentType: 'image/jpeg',
             ACL: 'public-read',
           };
 
-          s3.upload(uploadParams, function (err, data) {
-            if (err) {
+          s3.upload(uploadParams, function (error, data) {
+            if (error) {
               console.log('Error', err);
             }
             if (data) {
-              let isMain = false;
-              if (id % 5 === 0) {
-                propertyId++;
-                isMain = true;
-              }
-
               Photo.create({
                 link: data.Location,
-                isMain,
-                propertyId,
+                isMain: id % 5 === 0 ? true : false,
+                propertyId: Math.ceil(id / 5),
               });
             }
           });
