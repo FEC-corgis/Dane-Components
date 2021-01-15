@@ -32,6 +32,7 @@ export const handleGetPhotos = () => async (dispatch) => {
   try {
     const photos = await getPhotos();
     dispatch(setPhotos(photos));
+    dispatch(setCurrentPhoto({ current: photos[0], currentIndex: 0 }));
   } catch (error) {
     console.log('ERROR IN PHOTO SLICE');
   }
