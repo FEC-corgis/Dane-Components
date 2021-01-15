@@ -3,8 +3,8 @@ import { LeftContainer, LeftImg } from './styles';
 
 const LeftPhoto = (props) => {
   return (
-    <LeftContainer onClick={props.handleClick}>
-      <LeftImg src={props.link} alt={'house'} />
+    <LeftContainer onClick={() => props.handleClick(props.photo.id)}>
+      <LeftImg src={props.photo.link} alt={'house'} />
     </LeftContainer>
   );
 };

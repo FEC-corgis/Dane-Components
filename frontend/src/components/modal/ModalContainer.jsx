@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import ModalNav from './ModalNav';
+import ModalNav from './nav/ModalNav';
 import Photo from './Photo';
-import NextButton from './NextButton';
+import DirectionButtons from './directionButtons/DirectionButtons';
 import { useSelector } from 'react-redux';
 import { getModalState } from '../../redux/slices/modal/modalSlice';
 
@@ -13,7 +13,7 @@ const ModalContainer = () => {
     <Container style={{ bottom: showModal ? 0 : '-100vh' }}>
       <ModalNav />
       <Photo />
-      <NextButton />
+      <DirectionButtons />
     </Container>
   );
 };

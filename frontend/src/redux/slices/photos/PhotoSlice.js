@@ -3,15 +3,27 @@ import { getPhotos } from './helpers';
 
 const photoSlice = createSlice({
   name: 'photos',
-  initialState: [],
+  initialState: {
+    allPhotos: [],
+    current: null,
+  },
   reducers: {
     setPhotos: (state, action) => {
-      return action.payload;
+      return {
+        ...state,
+        allPhotos: action.payload,
+      };
+    },
+    setCurrentPhoto: (state, action) => {
+      return {
+        ...state,
+        current: action.payload,
+      };
     },
   },
 });
 
-export const { setPhotos } = photoSlice.actions;
+export const { setPhotos, setCurrentPhoto } = photoSlice.actions;
 export const getPhotoState = (state) => state.photos;
 
 export const handleGetPhotos = () => async (dispatch) => {
@@ -21,6 +33,11 @@ export const handleGetPhotos = () => async (dispatch) => {
   } catch (error) {
     console.log('ERROR IN PHOTO SLICE');
   }
+};
+
+export const handleFindCurrent = (photos, id) => (dispatch) => {
+  const photo = photos.find((item) => item.id === id);
+  dispatch(setCurrentPhoto(photo));
 };
 
 export default photoSlice.reducer;

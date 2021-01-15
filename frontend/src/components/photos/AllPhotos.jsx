@@ -9,10 +9,7 @@ const AllPhotos = (props) => {
   return (
     <Flex style={{ padding: props.width >= 1128 ? '0 80px' : '0 40px' }}>
       <Grid>
-        <LeftPhoto
-          link={props.photos[0].link}
-          handleClick={props.handleClick}
-        />
+        <LeftPhoto photo={props.photos[0]} handleClick={props.handleClick} />
         <MiddlePhotos
           photo1={props.photos[1]}
           photo2={props.photos[3]}

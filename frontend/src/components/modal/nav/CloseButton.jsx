@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { setShowModal } from '../../redux/slices/modal/modalSlice';
+import { setShowModal } from '../../../redux/slices/modal/modalSlice';
 
 const CloseButton = () => {
   const dispatch = useDispatch();

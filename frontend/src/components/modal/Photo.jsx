@@ -5,11 +5,11 @@ import { getPhotoState } from '../../redux/slices/photos/PhotoSlice';
 import { Flex } from '../photos/styles';
 
 const Photo = () => {
-  const photos = useSelector(getPhotoState);
+  const { current } = useSelector(getPhotoState);
   return (
     <Flex>
       <Container>
-        {photos.length && <Image src={photos[0].link} alt={'house'} />}
+        {current && <Image src={current.link} alt={'house'} />}
         <Description>
           <span>
             Welcome to South Lake Tahoe! This home is professionally managed by

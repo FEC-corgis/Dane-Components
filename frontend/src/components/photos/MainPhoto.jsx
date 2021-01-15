@@ -4,8 +4,8 @@ import styled from 'styled-components';
 const JustMain = (props) => {
   return (
     <Flex>
-      <MainContainer onClick={props.handleClick}>
-        <MainImg src={props.link} alt={'house'} />
+      <MainContainer onClick={() => props.handleClick(props.photo.id)}>
+        <MainImg src={props.photo.link} alt={'house'} />
       </MainContainer>
     </Flex>
   );
