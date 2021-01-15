@@ -9,6 +9,7 @@ const Image = (props) => {
     <Popup showPopup={showPopup}>
       <div className="fade-in">
         <Img src={props.link} alt={'house'} />
+        {/* <Img src="http://placecorgi.com/250" /> */}
       </div>
     </Popup>
   );
