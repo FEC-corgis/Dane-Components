@@ -4,7 +4,7 @@ import ModalContainer from './components/modal/ModalContainer';
 
 const App = () => {
   return (
-    <div style={{ marginTop: '66px' }}>
+    <div>
       <ModalContainer />
       <PhotoContainer />
     </div>

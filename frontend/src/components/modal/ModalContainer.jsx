@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import CloseButton from './CloseButton';
+import ModalNav from './ModalNav';
+import Photo from './Photo';
 import { useSelector } from 'react-redux';
 import { getModalState } from '../../redux/slices/modal/modalSlice';
 
@@ -8,8 +9,9 @@ const ModalContainer = () => {
   const showModal = useSelector(getModalState);
 
   return (
-    <Container style={{ bottom: showModal ? 0 : '-100vh' }}>
-      <CloseButton />
+    <Container style={{ bottom: !showModal ? 0 : '-100vh' }}>
+      <ModalNav />
+      <Photo />
     </Container>
   );
 };

@@ -23,7 +23,7 @@ const CloseButton = () => {
 const Container = styled.div`
   display: flex;
   justify-content: center
-  padding: 10px;
+  padding: 20px;
   width: 90px;
   height: 35px;
   border-radius: 10px;
@@ -34,7 +34,7 @@ const Button = styled.button`
   width: 100%;
   border-radius: 10px;
   border: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
 
   ${Container}:hover & {
     cursor: pointer;
