@@ -19,7 +19,10 @@ const MobileModal = () => {
   return (
     <MobileModalContainer style={{ bottom: modal.showModal ? 0 : '-100vh' }}>
       <MobileNav />
-      <div className="" style={{ padding: width >= 743 ? '0 100px' : 0 }}>
+      <div
+        className={'fade-in'}
+        style={{ padding: width >= 743 ? '0 100px' : 0 }}
+      >
         {photos.groups.map((group, i) => {
           return (
             <PhotosGrid

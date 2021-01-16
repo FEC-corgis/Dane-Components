@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import PhotoContainer from './components/photos/PhotoContainer';
 import Photos from './components/photos/Photos';
 import UseWindowSize from './helpers/UseWindowSize';
 import Modal from './components/modal/Modal';
@@ -22,7 +21,6 @@ const App = () => {
     current && (
       <div>
         {width > 1127 ? <Modal /> : <MobileModal />}
-        {/* <PhotoContainer photos={allPhotos} /> */}
         <Photos photos={allPhotos} />
       </div>
     )
