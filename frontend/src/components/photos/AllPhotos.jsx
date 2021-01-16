@@ -31,7 +31,8 @@ const Grid = styled.div`
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 8px;
   max-width: 1130px;
-  max-height: 50vh;
+  max-height: 51vh;
+  min-height: 300px;
 `;
 
 export default AllPhotos;
