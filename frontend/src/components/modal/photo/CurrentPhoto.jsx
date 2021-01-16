@@ -6,7 +6,7 @@ import { Flex } from '../../photos/styles';
 const CurrentPhoto = (props) => (
   <Flex>
     <div>
-      <Image link={props.current.link} />
+      <Image link={props.current.link} height={props.height} />
       <Description>
         <span>{props.current.description}</span>
       </Description>

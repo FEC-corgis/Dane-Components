@@ -7,9 +7,9 @@ const Image = (props) => {
   const { showPopup } = useSelector(getModalState);
   return (
     <Popup showPopup={showPopup}>
-      <Container className={'fade-in'}>
+      <div className={'fade-in'}>
         <Img src={props.link} alt={'house'} />
-      </Container>
+      </div>
     </Popup>
   );
 };
@@ -18,12 +18,8 @@ const Img = styled.img`
   width: 100%;
   height: 100%;
   padding: 0 100px;
-  object: cover;
-`;
-
-const Container = styled.div`
-  max-width: 1084px;
-  max-height: 722px;
+  max-height: 75vh;
+  object-fit: contain;
 `;
 
 const Popup = styled.div`
