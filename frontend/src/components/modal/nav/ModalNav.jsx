@@ -9,8 +9,12 @@ const ModalNav = (props) => (
     <NavContainer>
       <Nav>
         <CloseButton />
-        {props.height > 500 && <PhotoCount {...props} />}
-        <Icons />
+        {props.height > 500 && (
+          <React.Fragment>
+            <PhotoCount {...props} />
+            <Icons />
+          </React.Fragment>
+        )}
       </Nav>
     </NavContainer>
   </NavSection>

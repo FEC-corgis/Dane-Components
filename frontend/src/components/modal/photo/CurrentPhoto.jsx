@@ -7,9 +7,11 @@ const CurrentPhoto = (props) => (
   <Flex>
     <div>
       <Image link={props.current.link} height={props.height} />
-      <Description>
-        <span>{props.current.description}</span>
-      </Description>
+      {props.height >= 625 && (
+        <Description>
+          <span>{props.current.description}</span>
+        </Description>
+      )}
     </div>
   </Flex>
 );

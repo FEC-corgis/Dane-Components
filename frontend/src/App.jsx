@@ -19,10 +19,10 @@ const App = () => {
   }, []);
   return (
     current && (
-      <div>
+      <React.Fragment>
         {width > 1127 ? <Modal /> : <MobileModal />}
         <Photos photos={allPhotos} />
-      </div>
+      </React.Fragment>
     )
   );
 };

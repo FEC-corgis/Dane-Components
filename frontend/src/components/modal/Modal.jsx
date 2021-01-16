@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import UseWindowSize from '../../helpers/UseWindowSize';
-import NormalModalContent from './content/Normal';
+import ModalContent from './content/ModalContent';
 import { useSelector } from 'react-redux';
 
 const Modal = () => {
@@ -10,7 +10,7 @@ const Modal = () => {
 
   return (
     <ModalContainer style={{ bottom: modal.showModal ? 0 : '-100vh' }}>
-      <NormalModalContent photos={photos} height={height} />
+      <ModalContent photos={photos} height={height} />
     </ModalContainer>
   );
 };

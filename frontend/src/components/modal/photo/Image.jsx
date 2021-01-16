@@ -8,7 +8,11 @@ const Image = (props) => {
   return (
     <Popup showPopup={showPopup}>
       <div className={'fade-in'}>
-        <Img src={props.link} alt={'house'} />
+        <Img
+          src={props.link}
+          alt={'house'}
+          style={{ maxHeight: props.height <= 500 && '100vh' }}
+        />
       </div>
     </Popup>
   );
