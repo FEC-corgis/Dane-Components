@@ -7,6 +7,7 @@ const photoSlice = createSlice({
     allPhotos: [],
     current: null,
     currentIndex: 0,
+    groups: [],
   },
   reducers: {
     setPhotos: (state, action) => {
@@ -22,10 +23,16 @@ const photoSlice = createSlice({
         currentIndex: action.payload.currentIndex,
       };
     },
+    setGroups: (state, action) => {
+      return {
+        ...state,
+        groups: action.payload,
+      };
+    },
   },
 });
 
-export const { setPhotos, setCurrentPhoto } = photoSlice.actions;
+export const { setPhotos, setCurrentPhoto, setGroups } = photoSlice.actions;
 export const getPhotoState = (state) => state.photos;
 
 export const handleGetPhotos = () => async (dispatch) => {
@@ -41,6 +48,18 @@ export const handleGetPhotos = () => async (dispatch) => {
 export const handleFindCurrent = (photos, id) => (dispatch) => {
   const currentIndex = photos.findIndex((photo) => photo.id === id);
   dispatch(setCurrentPhoto({ current: photos[currentIndex], currentIndex }));
+};
+
+export const handleGroupPhotos = (photos) => (dispatch) => {
+  const groups = [];
+  for (let i = 0; i < photos.length; i += 3) {
+    groups.push({
+      big: photos[i],
+      left: photos[i + 1],
+      right: photos[i + 2],
+    });
+  }
+  dispatch(setGroups(groups));
 };
 
 export default photoSlice.reducer;

@@ -1,20 +1,28 @@
 import React, { useEffect } from 'react';
 import PhotoContainer from './components/photos/PhotoContainer';
-import Modal from './components/modal/MobileModal';
+import Modal from './components/modal/Modal';
 import MobileModal from './components/modal/mobile/MobileContainer';
-import { useDispatch } from 'react-redux';
-import { handleGetPhotos } from './redux/slices/photos/PhotoSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  getPhotoState,
+  handleGetPhotos,
+} from './redux/slices/photos/PhotoSlice';
+
 const App = () => {
   const dispatch = useDispatch();
+  const { current } = useSelector(getPhotoState);
+
   useEffect(() => {
     dispatch(handleGetPhotos());
   }, []);
   return (
-    <div>
-      {/* <Modal /> */}
-      <MobileModal />
-      {/* <PhotoContainer /> */}
-    </div>
+    current && (
+      <div>
+        {/* <Modal /> */}
+        <MobileModal />
+        {/* <PhotoContainer /> */}
+      </div>
+    )
   );
 };
 

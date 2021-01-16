@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaChevronLeft } from 'react-icons/fa';
+import { BsChevronLeft } from 'react-icons/bs';
 
 const BackButton = () => {
   return (
@@ -8,7 +9,7 @@ const BackButton = () => {
       <Wrapper>
         <Circle>
           <Span>
-            <FaChevronLeft style={{ fontSize: '1.3rem' }} />
+            <BsChevronLeft className={'icon'} />
           </Span>
         </Circle>
       </Wrapper>
