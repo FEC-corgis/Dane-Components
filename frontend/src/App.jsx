@@ -1,12 +1,14 @@
 import React from 'react';
 import PhotoContainer from './components/photos/PhotoContainer';
-import ModalContainer from './components/modal/ModalContainer';
+import Modal from './components/modal/MobileModal';
+import MobileModal from './components/modal/mobile/MobileContainer';
 
 const App = () => {
   return (
     <div>
-      <ModalContainer />
-      <PhotoContainer />
+      {/* <Modal /> */}
+      <MobileModal />
+      {/* <PhotoContainer /> */}
     </div>
   );
 };

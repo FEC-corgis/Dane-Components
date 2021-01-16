@@ -5,12 +5,12 @@ import CurrentPhoto from './photo/CurrentPhoto';
 import DirectionButtons from './directionButtons/DirectionButtons';
 import { useSelector } from 'react-redux';
 
-const ModalContainer = () => {
+const Modal = () => {
   const { modal, photos } = useSelector((state) => state);
 
   return (
     photos.current && (
-      <Container style={{ bottom: modal.showModal ? 0 : '-100vh' }}>
+      <ModalContainer style={{ bottom: modal.showModal ? 0 : '-100vh' }}>
         <ModalNav
           count={photos.currentIndex + 1}
           total={photos.allPhotos.length}
@@ -21,12 +21,12 @@ const ModalContainer = () => {
           current={photos.current}
           index={photos.currentIndex}
         />
-      </Container>
+      </ModalContainer>
     )
   );
 };
 
-const Container = styled.div`
+export const ModalContainer = styled.div`
   position: fixed;
   height: 100vh;
   width: 100vw;
@@ -35,4 +35,4 @@ const Container = styled.div`
   transition: opacity 0.3s ease-out, bottom 0.3s ease-out;
 `;
 
-export default ModalContainer;
+export default Modal;
