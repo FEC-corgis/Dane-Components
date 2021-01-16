@@ -16,7 +16,7 @@ const Modal = () => {
 };
 
 export const ModalContainer = styled.div`
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100vw;
   background-color: white;
