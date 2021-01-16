@@ -20,7 +20,6 @@ const Container = styled.section`
   width: 100%;
   height: 48px;
   padding: 0 24px;
-  margin-bottom: 40px;
 `;
 
 export default MobileNav;

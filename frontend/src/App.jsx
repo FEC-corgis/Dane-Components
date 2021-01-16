@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import PhotoContainer from './components/photos/PhotoContainer';
+import Photos from './components/photos/Photos';
+import UseWindowSize from './helpers/UseWindowSize';
 import Modal from './components/modal/Modal';
 import MobileModal from './components/modal/mobile/MobileContainer';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,7 +12,8 @@ import {
 
 const App = () => {
   const dispatch = useDispatch();
-  const { current } = useSelector(getPhotoState);
+  const { width } = UseWindowSize();
+  const { current, allPhotos } = useSelector(getPhotoState);
 
   useEffect(() => {
     dispatch(handleGetPhotos());
@@ -18,9 +21,9 @@ const App = () => {
   return (
     current && (
       <div>
-        {/* <Modal /> */}
-        <MobileModal />
-        {/* <PhotoContainer /> */}
+        {width > 1127 ? <Modal /> : <MobileModal />}
+        {/* <PhotoContainer photos={allPhotos} /> */}
+        <Photos photos={allPhotos} />
       </div>
     )
   );

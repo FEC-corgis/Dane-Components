@@ -1,12 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaChevronLeft } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
 import { BsChevronLeft } from 'react-icons/bs';
+import { setShowModal } from '../../../../redux/slices/modal/modalSlice';
 
 const BackButton = () => {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(setShowModal(false));
+  };
+
   return (
     <Container>
-      <Wrapper>
+      <Wrapper onClick={handleClick}>
         <Circle>
           <Span>
             <BsChevronLeft className={'icon'} />
