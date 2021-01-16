@@ -3,7 +3,7 @@ import ModalNav from '../nav/ModalNav';
 import CurrentPhoto from '../photo/CurrentPhoto';
 import DirectionButtons from '../directionButtons/DirectionButtons';
 
-const Normal = (props) => (
+const ModalContent = (props) => (
   <React.Fragment>
     <ModalNav
       count={props.photos.currentIndex + 1}
@@ -23,4 +23,4 @@ const Normal = (props) => (
   </React.Fragment>
 );
 
-export default Normal;
+export default ModalContent;

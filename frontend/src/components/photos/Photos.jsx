@@ -1,6 +1,7 @@
 import React from 'react';
 import AllPhotos from './AllPhotos';
 import MainPhoto from './MainPhoto';
+import Title from '../title/Title';
 import UseWindowSize from '../../helpers/UseWindowSize';
 import { useDispatch } from 'react-redux';
 import { setShowModal } from '../../redux/slices/modal/modalSlice';
@@ -15,10 +16,20 @@ const Photos = (props) => {
     dispatch(handleFindCurrent(props.photos, id));
   };
 
-  return width > 743 ? (
-    <AllPhotos photos={props.photos} width={width} handleClick={handleClick} />
-  ) : (
-    <MainPhoto photo={props.photos[0]} handleClick={handleClick} />
+  return (
+    <React.Fragment>
+      <Title width={width} />
+      {width > 743 ? (
+        <AllPhotos
+          photos={props.photos}
+          width={width}
+          handleClick={handleClick}
+        />
+      ) : (
+        <MainPhoto photo={props.photos[0]} handleClick={handleClick} />
+      )}
+      ;
+    </React.Fragment>
   );
 };
 
