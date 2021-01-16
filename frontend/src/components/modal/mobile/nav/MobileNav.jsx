@@ -1,18 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import BackButton from './BackButton';
+import Icon from './Icon';
 
 const MobileNav = () => {
   return (
     <Container className={'nav'}>
       <BackButton />
-      <div className=""></div>
+      <Icon />
     </Container>
   );
 };
 
 const Container = styled.section`
-  // background-color: blue;
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
