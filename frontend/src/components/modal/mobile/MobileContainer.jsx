@@ -1,16 +1,17 @@
 import React from 'react';
 import MobileNav from './nav/MobileNav';
-import CurrentPhoto from '../photo/CurrentPhoto';
+import PhotosGrid from './photo/PhotosGrid';
 import { ModalContainer } from '../MobileModal';
 import { useSelector } from 'react-redux';
+import { getPhotoState } from '../../../redux/slices/photos/PhotoSlice';
 
 const MobileModal = () => {
-  const { modal, photos } = useSelector((state) => state);
+  const photos = useSelector(getPhotoState);
   return (
     photos.current && (
       <ModalContainer>
         <MobileNav />
-        <CurrentPhoto photos={photos.allPhotos} current={photos.current} />
+        <PhotosGrid />
       </ModalContainer>
     )
   );
