@@ -1,7 +1,7 @@
 import React from 'react';
 import AllPhotos from './AllPhotos';
 import MainPhoto from './MainPhoto';
-import Title from '../title/Title';
+import TitleGrid from '../title/TitleGrid';
 import UseWindowSize from '../../helpers/UseWindowSize';
 import { useDispatch } from 'react-redux';
 import { setShowModal } from '../../redux/slices/modal/modalSlice';
@@ -18,7 +18,7 @@ const Photos = (props) => {
 
   return (
     <React.Fragment>
-      <Title width={width} />
+      <TitleGrid width={width} />
       {width > 743 ? (
         <AllPhotos
           photos={props.photos}
