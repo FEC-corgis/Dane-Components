@@ -9,11 +9,13 @@ import {
   getPhotoState,
   handleGetPhotos,
 } from './redux/slices/photos/PhotoSlice';
+import { getModalState } from './redux/slices/modal/modalSlice';
 
 const App = () => {
   const dispatch = useDispatch();
   const { width, height } = UseWindowSize();
   const { current, allPhotos } = useSelector(getPhotoState);
+  const { showShareModal } = useSelector(getModalState);
 
   useEffect(() => {
     dispatch(handleGetPhotos());
@@ -25,7 +27,7 @@ const App = () => {
         {width > 1127 ? (
           <React.Fragment>
             <Modal height={height} />
-            <ShareModal />
+            {showShareModal && <ShareModal />}
           </React.Fragment>
         ) : (
           <MobileModal width={width} />
