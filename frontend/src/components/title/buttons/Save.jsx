@@ -1,12 +1,20 @@
 import React from 'react';
 import IconGroup from './styled-components/IconGroup';
 import Underline from './styled-components/Underline';
-import { IoHeartOutline } from 'react-icons/io5';
+import { useDispatch, useSelector } from 'react-redux';
+import { IoHeartOutline, IoHeartSharp } from 'react-icons/io5';
+import {
+  getModalState,
+  setSaved,
+} from '../../../redux/slices/modal/modalSlice';
 
 const Save = () => {
+  const dispatch = useDispatch();
+  const { saved } = useSelector(getModalState);
+
   return (
-    <IconGroup>
-      <IoHeartOutline />
+    <IconGroup onClick={() => dispatch(setSaved())}>
+      {saved ? <IoHeartSharp style={{ color: 'red' }} /> : <IoHeartOutline />}
       <Underline>Save</Underline>
     </IconGroup>
   );
