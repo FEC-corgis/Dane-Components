@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import MobileNav from './nav/MobileNav';
 import PhotosGrid from './photo/PhotosGrid';
-import styled from 'styled-components';
-import { ModalContainer } from '../Modal';
+import MobileModalContainer from './styled-components/MobileModalContainer';
 import { useDispatch, useSelector } from 'react-redux';
 import { handleGroupPhotos } from '../../../redux/slices/photos/PhotoSlice';
 
@@ -35,9 +34,5 @@ const MobileModal = (props) => {
     </MobileModalContainer>
   );
 };
-
-const MobileModalContainer = styled(ModalContainer)`
-  overflow: scroll;
-`;
 
 export default MobileModal;

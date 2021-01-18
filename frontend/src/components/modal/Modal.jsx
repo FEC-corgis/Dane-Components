@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import ModalContent from './content/ModalContent';
+import ModalContainer from './styled-components/ModalContainer';
 import { useSelector } from 'react-redux';
 
 const Modal = (props) => {
@@ -12,15 +12,5 @@ const Modal = (props) => {
     </ModalContainer>
   );
 };
-
-export const ModalContainer = styled.div`
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  background-color: white;
-  left: 0;
-  transition: opacity 0.3s ease-out, bottom 0.3s ease-out;
-  z-index: 5;
-`;
 
 export default Modal;

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
+import Modal from './components/modal/Modal';
 import Photos from './components/photos/Photos';
 import UseWindowSize from './helpers/UseWindowSize';
-import Modal from './components/modal/Modal';
-import MobileModal from './components/modal/mobile/MobileContainer';
+import MobileModal from './components/modal/mobile/MobileModal';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getPhotoState,

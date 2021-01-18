@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import DirectionFlex from './styled-components/DirectionFlex';
+import DirectionButtonContainer from './styled-components/DirectionButtonContainer';
+import Wrapper from './styled-components/Wrapper';
+import CircleRight from './styled-components/CircleRight';
+import CircleLeft from './styled-components/CircleLeft';
+import IconSpan from './styled-components/IconSpan';
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { handleTransition } from '../../../redux/slices/modal/modalSlice';
@@ -16,8 +21,8 @@ const DirectionButtons = (props) => {
   };
 
   return (
-    <Container>
-      <Flex>
+    <DirectionButtonContainer>
+      <DirectionFlex>
         <Wrapper
           style={{
             visibility: props.index === 0 && 'hidden',
@@ -58,57 +63,9 @@ const DirectionButtons = (props) => {
             </IconSpan>
           </CircleRight>
         </Wrapper>
-      </Flex>
-    </Container>
+      </DirectionFlex>
+    </DirectionButtonContainer>
   );
 };
-
-const Container = styled.div`
-  position: absolute;
-  width: 100%;
-  top: calc(50% - 25px);
-`;
-
-const Flex = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const Wrapper = styled.div``;
-
-const CircleRight = styled.div`
-  position: relative;
-  width: 45px;
-  height: 45px;
-  border: 1px solid rgba(34, 34, 34, 0.5);
-  border-radius: 100%;
-  margin-right: 45px;
-
-  ${Wrapper}:hover & {
-    cursor: pointer;
-    background-color: rgba(34, 34, 34, 0.1);
-  }
-`;
-
-const CircleLeft = styled.div`
-  position: relative;
-  width: 45px;
-  height: 45px;
-  border: 1px solid rgba(34, 34, 34, 0.5);
-  border-radius: 100%;
-  margin-left: 45px;
-
-  ${Wrapper}:hover & {
-    cursor: pointer;
-    background-color: rgba(34, 34, 34, 0.1);
-  }
-`;
-
-const IconSpan = styled.span`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
 
 export default DirectionButtons;
