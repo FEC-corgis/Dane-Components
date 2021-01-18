@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from './Image';
-import { Flex } from '../../photos/styles';
+import Flex from '../../styled-components/Flex';
 
 const CurrentPhoto = (props) => (
   <Flex>

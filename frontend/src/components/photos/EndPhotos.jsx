@@ -1,5 +1,7 @@
 import React from 'react';
-import { EndImg, ContainerTopRight, ContainerBottomRight } from './styles';
+import EndImg from './styled-components/EndImg';
+import ContainerTopRight from './styled-components/ContainerTopRight';
+import ContainerBottomRight from './styled-components/ContainerBottomRight';
 
 const EndPhotos = (props) => {
   return (

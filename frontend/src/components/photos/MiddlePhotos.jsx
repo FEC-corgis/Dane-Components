@@ -1,5 +1,7 @@
 import React from 'react';
-import { MiddleImg, ContainerTop, ContainerBottom } from './styles';
+import MiddleImg from './styled-components/MiddleImg';
+import ContainerTop from './styled-components/ContainerTop';
+import ContainerBottom from './styled-components/ContainerBottom';
 
 const MiddlePhotos = (props) => {
   return (

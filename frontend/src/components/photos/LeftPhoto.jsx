@@ -1,5 +1,6 @@
 import React from 'react';
-import { LeftContainer, LeftImg } from './styles';
+import LeftImg from './styled-components/LeftImg';
+import LeftContainer from './styled-components/LeftContainer';
 
 const LeftPhoto = (props) => {
   return (

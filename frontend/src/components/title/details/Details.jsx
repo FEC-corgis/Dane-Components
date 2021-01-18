@@ -2,7 +2,7 @@ import React from 'react';
 import GreyText from './styled-components/GreyText';
 import SuperHost from './SuperHost';
 import RatingText from './styled-components/RatingText';
-import { Flex } from '../../photos/styles';
+import Flex from '../../styled-components/Flex';
 import { AiTwotoneStar } from 'react-icons/ai';
 
 const Details = () => (

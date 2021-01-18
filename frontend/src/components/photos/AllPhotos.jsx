@@ -3,7 +3,7 @@ import LeftPhoto from './LeftPhoto';
 import MiddlePhotos from './MiddlePhotos';
 import EndPhotos from './EndPhotos';
 import styled from 'styled-components';
-import { Flex } from './styles';
+import Flex from '../styled-components/Flex';
 
 const AllPhotos = (props) => (
   <Flex style={{ padding: props.width >= 1128 ? '0 80px' : '0 40px' }}>

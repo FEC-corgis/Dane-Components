@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Flex } from '../../../photos/styles';
+import Flex from '../../../styled-components/Flex';
 
 const PhotosGrid = (props) => (
   <Flex>
