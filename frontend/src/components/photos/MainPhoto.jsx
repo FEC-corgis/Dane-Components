@@ -1,15 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const JustMain = (props) => {
-  return (
-    <Flex>
-      <MainContainer onClick={() => props.handleClick(props.photo.id)}>
-        <MainImg src={props.photo.link} alt={'house'} />
-      </MainContainer>
-    </Flex>
-  );
-};
+const JustMain = (props) => (
+  <Flex>
+    <MainContainer onClick={() => props.handleClick(props.photo.id)}>
+      <MainImg src={props.photo.link} alt={'house'} />
+    </MainContainer>
+  </Flex>
+);
 
 const Flex = styled.div`
   display: flex;
@@ -18,6 +16,7 @@ const Flex = styled.div`
 
 const MainContainer = styled.div`
   width: 743px;
+  cursor: pointer;
 `;
 
 const MainImg = styled.img`

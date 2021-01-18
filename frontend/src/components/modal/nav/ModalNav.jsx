@@ -5,12 +5,16 @@ import Icons from './Icons';
 import styled from 'styled-components';
 
 const ModalNav = (props) => (
-  <NavSection>
+  <NavSection style={{ position: props.height <= 500 && 'absolute' }}>
     <NavContainer>
       <Nav>
         <CloseButton />
-        <PhotoCount {...props} />
-        <Icons />
+        {props.height > 500 && (
+          <React.Fragment>
+            <PhotoCount {...props} />
+            <Icons />
+          </React.Fragment>
+        )}
       </Nav>
     </NavContainer>
   </NavSection>
