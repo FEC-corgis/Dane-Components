@@ -8,13 +8,13 @@ import {
 
 const PhotoContainer = () => {
   const dispatch = useDispatch();
-  const photos = useSelector(getPhotoState);
+  const { allPhotos } = useSelector(getPhotoState);
 
   useEffect(() => {
     dispatch(handleGetPhotos());
   }, []);
 
-  return photos.length ? <Photos photos={photos} /> : null;
+  return allPhotos.length ? <Photos photos={allPhotos} /> : null;
 };
 
 export default PhotoContainer;

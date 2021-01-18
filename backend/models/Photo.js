@@ -1,6 +1,6 @@
 const { DataTypes, Model } = require('sequelize');
 const sequelize = require('../data/db');
-const { photos } = require('../data/mock/PhotoData');
+const { photoSeed } = require('../data/seedScript/PhotoSeed');
 
 class Photo extends Model {}
 
@@ -12,6 +12,10 @@ Photo.init(
     },
     isMain: {
       type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
     propertyId: {
@@ -26,13 +30,15 @@ Photo.init(
 );
 
 (async () => {
-  await Photo.sync();
-  const existingPhotos = await Photo.findAll();
+  try {
+    await Photo.sync();
+    const existingPhotos = await Photo.findAll();
 
-  if (!existingPhotos.length) {
-    for (let i = 0; i < photos.length; i++) {
-      await Photo.create(photos[i]);
+    if (!existingPhotos.length && process.env.NODE_ENV !== 'production') {
+      await photoSeed(Photo);
     }
+  } catch (error) {
+    console.log('ERROR IN PHOTO MIGRATION');
   }
 })();
 
