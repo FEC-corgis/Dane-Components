@@ -11,17 +11,22 @@ import {
 
 const App = () => {
   const dispatch = useDispatch();
-  const { width } = UseWindowSize();
+  const { width, height } = UseWindowSize();
   const { current, allPhotos } = useSelector(getPhotoState);
 
   useEffect(() => {
     dispatch(handleGetPhotos());
   }, []);
+
   return (
     current && (
       <React.Fragment>
-        {width > 1127 ? <Modal /> : <MobileModal />}
-        <Photos photos={allPhotos} />
+        {width > 1127 ? (
+          <Modal height={height} />
+        ) : (
+          <MobileModal width={width} />
+        )}
+        <Photos photos={allPhotos} width={width} />
       </React.Fragment>
     )
   );

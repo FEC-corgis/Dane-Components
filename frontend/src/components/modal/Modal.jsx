@@ -1,16 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import UseWindowSize from '../../helpers/UseWindowSize';
 import ModalContent from './content/ModalContent';
 import { useSelector } from 'react-redux';
 
-const Modal = () => {
+const Modal = (props) => {
   const { modal, photos } = useSelector((state) => state);
-  const { height } = UseWindowSize();
 
   return (
     <ModalContainer style={{ bottom: modal.showModal ? 0 : '-100vh' }}>
-      <ModalContent photos={photos} height={height} />
+      <ModalContent photos={photos} height={props.height} />
     </ModalContainer>
   );
 };
