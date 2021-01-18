@@ -1,12 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import Font from './styled-components/Font';
 
-const PhotoCount = (props) => (
-  <Container>{`${props.count} / ${props.total}`}</Container>
-);
-
-const Container = styled.div`
-  font-size: 1rem;
-`;
+const PhotoCount = (props) => <Font>{`${props.count} / ${props.total}`}</Font>;
 
 export default PhotoCount;

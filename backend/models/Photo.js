@@ -1,6 +1,7 @@
 const { DataTypes, Model } = require('sequelize');
-const sequelize = require('../data/db');
 const { photoSeed } = require('../data/seedScript/PhotoSeed');
+const sequelize = require('../data/db');
+const Property = require('./Property');
 
 class Photo extends Model {}
 
@@ -32,6 +33,7 @@ Photo.init(
 (async () => {
   try {
     await Photo.sync();
+    Photo.belongsTo(Property);
     const existingPhotos = await Photo.findAll();
 
     if (!existingPhotos.length && process.env.NODE_ENV !== 'production') {

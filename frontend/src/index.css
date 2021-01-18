@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital@0;1&display=swap');
 
 * {
@@ -67,4 +66,19 @@
   background: rgb(255, 56, 92);
   border-radius: 100%;
   left: 1px;
+}
+
+.photo-container::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #000;
+  transition: all ease-out 0.4s;
+  opacity: 0;
+  top: 0;
+}
+
+.photo-container:hover::after {
+  opacity: 0.3;
 }

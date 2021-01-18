@@ -28,7 +28,6 @@ const Photos = (props) => {
       ) : (
         <MainPhoto photo={props.photos[0]} handleClick={handleClick} />
       )}
-      ;
     </React.Fragment>
   );
 };

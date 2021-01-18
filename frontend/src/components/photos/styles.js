@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const LeftContainer = styled.div`
+  position: relative;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
   overflow: hidden;
@@ -9,9 +10,15 @@ export const LeftContainer = styled.div`
   grid-row-start: 1;
   grid-row-end: span 2;
   cursor: pointer;
+
+  &:hover::after {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
 `;
 
 export const ContainerTop = styled.div`
+  position: relative;
   overflow: hidden;
   grid-column-start: 3;
   grid-column-end: span 1;
@@ -21,6 +28,7 @@ export const ContainerTop = styled.div`
 `;
 
 export const ContainerBottom = styled.div`
+  position: relative;
   overflow: hidden;
   grid-column-start: 3;
   grid-column-end: span 1;
@@ -30,6 +38,7 @@ export const ContainerBottom = styled.div`
 `;
 
 export const ContainerTopRight = styled.div`
+  position: relative;
   border-top-right-radius: 1rem;
   overflow: hidden;
   grid-column-start: 4;
@@ -37,9 +46,14 @@ export const ContainerTopRight = styled.div`
   grid-row-start: 1;
   grid-row-end: span 1;
   cursor: pointer;
+
+  &:hover::after {
+    border-top-right-radius: 1rem;
+  }
 `;
 
 export const ContainerBottomRight = styled.div`
+  position: relative;
   border-bottom-right-radius: 1rem;
   overflow: hidden;
   grid-column-start: 4;
@@ -47,6 +61,10 @@ export const ContainerBottomRight = styled.div`
   grid-row-start: 2;
   grid-row-end: span 1;
   cursor: pointer;
+
+  &:hover::after {
+    border-bottom-right-radius: 1rem;
+  }
 `;
 
 export const LeftImg = styled.img`

@@ -3,5 +3,5 @@ import styled from 'styled-components';
 export default styled.p`
   color: grey;
   padding-left: 5px;
-  // font-size: 0.8rem;
+  font-size: 14px;
 `;
