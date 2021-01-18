@@ -3,6 +3,7 @@ import Modal from './components/modal/Modal';
 import Photos from './components/photos/Photos';
 import UseWindowSize from './helpers/UseWindowSize';
 import MobileModal from './components/modal/mobile/MobileModal';
+import ShareModal from './components/modal/share/ShareModal';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getPhotoState,
@@ -22,7 +23,10 @@ const App = () => {
     current && (
       <React.Fragment>
         {width > 1127 ? (
-          <Modal height={height} />
+          <React.Fragment>
+            <Modal height={height} />
+            <ShareModal />
+          </React.Fragment>
         ) : (
           <MobileModal width={width} />
         )}
