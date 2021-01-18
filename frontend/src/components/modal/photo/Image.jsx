@@ -1,10 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
+import Img from './styled-components/Img';
+import Popup from './styled-components/Popup';
 import { useSelector } from 'react-redux';
 import { getModalState } from '../../../redux/slices/modal/modalSlice';
 
 const Image = (props) => {
   const { showPopup } = useSelector(getModalState);
+
   return (
     <Popup showPopup={showPopup}>
       <div className={'fade-in'}>
@@ -17,18 +19,5 @@ const Image = (props) => {
     </Popup>
   );
 };
-
-const Img = styled.img`
-  width: 100%;
-  height: 100%;
-  padding: 0 100px;
-  max-height: 75vh;
-  object-fit: contain;
-`;
-
-const Popup = styled.div`
-  transition: 0.3s;
-  opacity: ${({ showPopup }) => (showPopup ? '1' : '0')};
-`;
 
 export default Image;
