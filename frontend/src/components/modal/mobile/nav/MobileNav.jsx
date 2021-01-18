@@ -1,25 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
-import BackButton from './BackButton';
 import Icon from './Icon';
+import BackButton from './BackButton';
+import MobileNavContainer from './styled-components/MobileNavContainer';
 
 const MobileNav = () => {
   return (
-    <Container className={'nav'}>
+    <MobileNavContainer className={'nav'}>
       <BackButton />
       <Icon />
-    </Container>
+    </MobileNavContainer>
   );
 };
-
-const Container = styled.section`
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 48px;
-  padding: 0 24px;
-`;
 
 export default MobileNav;
