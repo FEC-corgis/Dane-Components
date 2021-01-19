@@ -1,8 +1,8 @@
 import React from 'react';
-import H1 from './styled-components/H1';
-import Box from './styled-components/Box';
-import Text from './styled-components/Text';
-import Header from './styled-components/Header';
+import H1 from '../styled-components/H1';
+import Box from '../styled-components/Box';
+import Text from '../styled-components/Text';
+import Header from '../styled-components/Header';
 
 const ShareModalHeader = () => (
   <Header>

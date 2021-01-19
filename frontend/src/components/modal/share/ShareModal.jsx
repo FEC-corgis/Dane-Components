@@ -1,6 +1,6 @@
 import React from 'react';
 import ShareModalBackground from './styled-components/ShareModalBackground';
-import ShareModalContent from './ShareModalContent';
+import ShareModalContent from './components/ShareModalContent';
 import ShareModalFlex from './styled-components/ShareModalFlex';
 import { useDispatch } from 'react-redux';
 import { setShowShareModal } from '../../../redux/slices/modal/modalSlice';

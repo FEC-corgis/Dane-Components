@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Link from './styled-components/Link';
-import LinkBox from './styled-components/LinkBox';
-import LinkContainer from './styled-components/LinkContainer';
+import Link from '../styled-components/Link';
+import LinkBox from '../styled-components/LinkBox';
+import LinkContainer from '../styled-components/LinkContainer';
 
 const ShareModalLink = (props) => {
   const [copied, setCopied] = useState(false);
+
   const handleClick = (name) => {
     if (name !== 'Copy Link') return;
 
