@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from './styled-components/Link';
 import LinkBox from './styled-components/LinkBox';
 import LinkContainer from './styled-components/LinkContainer';
@@ -18,10 +18,18 @@ const ShareModalLink = (props) => {
     document.body.removeChild(dummy);
 
     setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 2000);
   };
+
+  useEffect(() => {
+    let mounted = true;
+    setTimeout(() => {
+      if (mounted) setCopied(false);
+    }, 2000);
+
+    return () => {
+      mounted = false;
+    };
+  }, [copied]);
 
   return (
     <LinkContainer>
