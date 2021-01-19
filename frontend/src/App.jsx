@@ -5,11 +5,11 @@ import UseWindowSize from './helpers/UseWindowSize';
 import MobileModal from './components/modal/mobile/MobileModal';
 import ShareModal from './components/modal/share/ShareModal';
 import { useDispatch, useSelector } from 'react-redux';
+import { getModalState } from './redux/slices/modal/modalSlice';
 import {
   getPhotoState,
   handleGetPhotos,
 } from './redux/slices/photos/PhotoSlice';
-import { getModalState } from './redux/slices/modal/modalSlice';
 
 const App = () => {
   const dispatch = useDispatch();
