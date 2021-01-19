@@ -5,5 +5,5 @@ export default styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1130px;
+  max-width: 1128px;
 `;
