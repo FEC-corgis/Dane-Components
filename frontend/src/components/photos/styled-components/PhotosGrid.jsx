@@ -6,7 +6,6 @@ export default styled.div`
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 8px;
   height: 100%;
-  // max-width: 1128px;
   max-height: 53vh;
-  // min-height: 300px;
+  min-height: 300px;
 `;
