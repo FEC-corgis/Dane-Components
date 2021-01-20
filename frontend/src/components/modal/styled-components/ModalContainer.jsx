@@ -5,7 +5,6 @@ export default styled.div`
 	height: 100vh;
 	width: 100vw;
 	background-color: white;
-	left: 0;
-	transition: opacity 0.4s ease-out, bottom 0.4s ease-out;
 	z-index: 5;
+	transition: opacity 0.4s ease-out, bottom 0.4s ease-out;
 `;
