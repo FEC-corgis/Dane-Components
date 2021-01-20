@@ -5,16 +5,18 @@ import ShareModalFlex from './styled-components/ShareModalFlex';
 import { useDispatch } from 'react-redux';
 import { setShowShareModal } from '../../../redux/slices/modal/modalSlice';
 
-const ShareModal = () => {
-  const dispatch = useDispatch();
+const ShareModal = (props) => {
+	const dispatch = useDispatch();
 
-  return (
-    <ShareModalBackground onClick={() => dispatch(setShowShareModal(false))}>
-      <ShareModalFlex>
-        <ShareModalContent />
-      </ShareModalFlex>
-    </ShareModalBackground>
-  );
+	return (
+		<ShareModalBackground
+			onClick={() => dispatch(setShowShareModal(false))}
+		>
+			<ShareModalFlex>
+				<ShareModalContent width={props.width} />
+			</ShareModalFlex>
+		</ShareModalBackground>
+	);
 };
 
 export default ShareModal;
