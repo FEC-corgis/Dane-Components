@@ -5,19 +5,20 @@ import { useSelector } from 'react-redux';
 import { getModalState } from '../../../redux/slices/modal/modalSlice';
 
 const Image = (props) => {
-  const { showPopup } = useSelector(getModalState);
+	const { showPopup } = useSelector(getModalState);
 
-  return (
-    <Popup showPopup={showPopup}>
-      <div className={'fade-in'}>
-        <Img
-          src={props.link}
-          alt={'house'}
-          style={{ maxHeight: props.height <= 500 && '100vh' }}
-        />
-      </div>
-    </Popup>
-  );
+	return (
+		<Popup showPopup={showPopup}>
+			<div>
+				<Img
+					className={'fade-in'}
+					src={props.link}
+					alt={'house'}
+					style={{ maxHeight: props.height <= 500 && '100vh' }}
+				/>
+			</div>
+		</Popup>
+	);
 };
 
 export default Image;

@@ -36,7 +36,7 @@ const ShareModalLink = (props) => {
 	return (
 		<LinkContainer>
 			<LinkBox>
-				<IconSpan>{<props.link.icon />}</IconSpan>
+				<IconSpan>{<props.link.icon size={'1.2em'} />}</IconSpan>
 				<Link onClick={() => handleClick(props.link.name)}>
 					{copied ? 'Link Copied' : props.link.name}
 				</Link>
