@@ -11,7 +11,7 @@ const ShareModalContent = (props) => (
 		onClick={(e) => e.stopPropagation()}
 	>
 		<CloseButton />
-		<ShareModalHeader />
+		<ShareModalHeader width={props.width} />
 		{Links.map((link, i) => (
 			<ShareModalLink key={i} link={link} />
 		))}

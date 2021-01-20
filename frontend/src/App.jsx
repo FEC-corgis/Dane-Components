@@ -29,7 +29,7 @@ const App = () => {
 				) : (
 					<MobileModal width={width} />
 				)}
-				{showShareModal && <ShareModal width={width} />}
+				<ShareModal width={width} />
 				<Photos photos={allPhotos} width={width} />
 			</React.Fragment>
 		)
