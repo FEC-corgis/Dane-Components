@@ -4,12 +4,14 @@ export default styled.section`
 	display: grid;
 	grid-template-rows: repeat(2, 1fr);
 	max-height: 114px;
+	padding: 0 80px;
 
-	margin: ${(props) => props.width <= 743 && '0 24px'};
-	padding: ${(props) =>
-		props.width > 1127
-			? '0 80px'
-			: props.width > 743
-			? '0 40px'
-			: '32px 0 32px 0'};
+	@media (max-width: 1127px) {
+		padding: 0 40px;
+	}
+
+	@media (max-width: 743px) {
+		margin: 0 24px;
+		padding: 32px 0 32px 0;
+	}
 `;

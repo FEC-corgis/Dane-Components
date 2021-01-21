@@ -4,8 +4,8 @@ import Title from './Title';
 import Header from './Header';
 
 const TitleGrid = (props) => (
-	<Grid width={props.width}>
-		<Title width={props.width} />
+	<Grid>
+		<Title />
 		<Header width={props.width} showIcons={props.showIcons} />
 	</Grid>
 );

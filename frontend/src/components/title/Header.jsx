@@ -7,7 +7,7 @@ import HeaderFlex from './styled-components/HeaderFlex';
 import HeaderContainer from './styled-components/HeaderContainer';
 
 const Header = (props) => (
-	<HeaderContainer width={props.width}>
+	<HeaderContainer>
 		<HeaderFlex>
 			<Left>
 				<Details />
