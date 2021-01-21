@@ -5,13 +5,13 @@ const { photoDescription } = require('../mock/PhotoDescription');
 	try {
 		await Photo.sync();
 
-		for (let i = 1; i < 500; i++) {
-			const id = i != 50 ? i : 501;
+		for (let i = 1; i < 530; i++) {
 			await Photo.create({
-				link: `https://fec-corgis.s3.amazonaws.com/houses/image/${id}`,
-				isMain: i % 5 === 0 ? true : false,
+				link: `https://fec-corgis.s3.amazonaws.com/houses/image/${i}`,
+				isMain: i < 500 && i % 5 === 0 ? true : false,
 				description: photoDescription[Math.floor(Math.random() * 100)],
-				PropertyId: Math.ceil(i / 5),
+				PropertyId:
+					i <= 500 ? Math.ceil(i / 5) : Math.ceil((i - 500) / 5),
 			});
 		}
 	} catch (error) {
