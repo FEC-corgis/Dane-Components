@@ -5,16 +5,16 @@ import PropertyName from './styled-components/PropertyName';
 import { useSelector } from 'react-redux';
 import { getPhotoState } from '../../redux/slices/photos/PhotoSlice';
 
-const Title = (props) => {
-  const { allPhotos } = useSelector(getPhotoState);
+const Title = () => {
+	const { allPhotos } = useSelector(getPhotoState);
 
-  return (
-    <TitleContainer width={props.width}>
-      <TitleFlex>
-        <PropertyName>{allPhotos[0].Property.title}</PropertyName>
-      </TitleFlex>
-    </TitleContainer>
-  );
+	return (
+		<TitleContainer>
+			<TitleFlex>
+				<PropertyName>{allPhotos[0].Property.title}</PropertyName>
+			</TitleFlex>
+		</TitleContainer>
+	);
 };
 
 export default Title;

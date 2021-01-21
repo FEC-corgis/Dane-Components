@@ -18,10 +18,9 @@ const Photos = (props) => {
 		<React.Fragment>
 			{props.width > 743 ? (
 				<React.Fragment>
-					<TitleGrid width={props.width} showIcons={true} />
+					<TitleGrid showIcons={true} />
 					<AllPhotos
 						photos={props.photos}
-						width={props.width}
 						handleClick={handleClick}
 					/>
 				</React.Fragment>
@@ -31,7 +30,7 @@ const Photos = (props) => {
 						photo={props.photos[0]}
 						handleClick={handleClick}
 					/>
-					<TitleGrid width={props.width} showIcons={false} />
+					<TitleGrid showIcons={false} />
 				</React.Fragment>
 			)}
 		</React.Fragment>

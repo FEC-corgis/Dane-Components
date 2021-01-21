@@ -8,7 +8,7 @@ import PhotosGrid from './styled-components/PhotosGrid';
 import PhotosContainer from './styled-components/PhotosContainer';
 
 const AllPhotos = (props) => (
-	<Padding width={props.width}>
+	<Padding>
 		<PhotosContainer>
 			<Ratio>
 				<PhotosGrid>

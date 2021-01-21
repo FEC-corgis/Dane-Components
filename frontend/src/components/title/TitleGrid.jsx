@@ -6,7 +6,7 @@ import Header from './Header';
 const TitleGrid = (props) => (
 	<Grid>
 		<Title />
-		<Header width={props.width} showIcons={props.showIcons} />
+		<Header showIcons={props.showIcons} />
 	</Grid>
 );
 
