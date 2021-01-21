@@ -8,5 +8,8 @@ export default styled.section`
 	z-index: 10;
 	visibility: ${(props) => !props.showShareModal && 'hidden'};
 	bottom: ${(props) => (props.showShareModal ? 0 : '-100%')};
-	transition: ${(props) => props.width < 743 && 'bottom 0.4s ease-out'};
+
+	@media (max-width: 743px) {
+		transition: bottom 0.4s ease-out;
+	}
 `;

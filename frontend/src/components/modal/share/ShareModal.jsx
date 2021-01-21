@@ -15,7 +15,6 @@ const ShareModal = (props) => {
 	return (
 		<ShareModalBackground
 			onClick={() => dispatch(setShowShareModal(false))}
-			width={props.width}
 			showShareModal={showShareModal}
 		>
 			<ShareModalFlex>
