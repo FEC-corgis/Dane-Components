@@ -8,7 +8,7 @@ import {
 	setShowShareModal,
 } from '../../../redux/slices/modal/modalSlice';
 
-const ShareModal = (props) => {
+const ShareModal = () => {
 	const dispatch = useDispatch();
 	const { showShareModal } = useSelector(getModalState);
 
@@ -18,7 +18,7 @@ const ShareModal = (props) => {
 			showShareModal={showShareModal}
 		>
 			<ShareModalFlex>
-				<ShareModalContent width={props.width} />
+				<ShareModalContent />
 			</ShareModalFlex>
 		</ShareModalBackground>
 	);

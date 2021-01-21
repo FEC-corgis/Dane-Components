@@ -22,7 +22,7 @@ const App = () => {
 	return (
 		current && (
 			<React.Fragment>
-				<ShareModal width={width} />
+				<ShareModal />
 				{width > 1127 ? <Modal height={height} /> : <MobileModal />}
 				<Photos photos={allPhotos} width={width} />
 			</React.Fragment>

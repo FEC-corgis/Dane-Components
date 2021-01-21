@@ -6,14 +6,11 @@ import ShareModalLinkContainer from '../styled-components/ShareModalLinkContaine
 import ShareModalLink from './ShareModalLink';
 import Links from '../Links';
 
-const ShareModalContent = (props) => (
-	<ShareModalContainer
-		width={props.width}
-		onClick={(e) => e.stopPropagation()}
-	>
+const ShareModalContent = () => (
+	<ShareModalContainer onClick={(e) => e.stopPropagation()}>
 		<CloseButton />
-		<ShareModalHeader width={props.width} />
-		<ShareModalLinkContainer width={props.width}>
+		<ShareModalHeader />
+		<ShareModalLinkContainer>
 			{Links.map((link, i) => (
 				<ShareModalLink key={i} link={link} />
 			))}

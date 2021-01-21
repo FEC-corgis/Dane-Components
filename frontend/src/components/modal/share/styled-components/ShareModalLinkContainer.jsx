@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
 export default styled.div`
-	margin-top: ${(props) => (props.width > 510 ? 0 : '24px')};
+	@media (max-width: 510px) {
+		margin-top: 24px;
+	}
 `;
