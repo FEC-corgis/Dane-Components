@@ -4,12 +4,12 @@ import Title from './Title';
 import Header from './Header';
 
 const TitleGrid = (props) => {
-  return (
-    <Grid>
-      <Title width={props.width} />
-      <Header width={props.width} />
-    </Grid>
-  );
+	return (
+		<Grid width={props.width}>
+			<Title width={props.width} />
+			<Header width={props.width} showIcons={props.showIcons} />
+		</Grid>
+	);
 };
 
 export default TitleGrid;

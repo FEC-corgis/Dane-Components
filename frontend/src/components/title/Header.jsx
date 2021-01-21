@@ -7,16 +7,18 @@ import HeaderFlex from './styled-components/HeaderFlex';
 import HeaderContainer from './styled-components/HeaderContainer';
 
 const Header = (props) => (
-  <HeaderContainer width={props.width}>
-    <HeaderFlex>
-      <Left>
-        <Details />
-      </Left>
-      <Right>
-        <Icons />
-      </Right>
-    </HeaderFlex>
-  </HeaderContainer>
+	<HeaderContainer width={props.width}>
+		<HeaderFlex>
+			<Left>
+				<Details />
+			</Left>
+			{props.showIcons && (
+				<Right>
+					<Icons />
+				</Right>
+			)}
+		</HeaderFlex>
+	</HeaderContainer>
 );
 
 export default Header;
