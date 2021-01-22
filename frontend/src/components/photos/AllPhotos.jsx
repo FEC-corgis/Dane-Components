@@ -9,29 +9,29 @@ import PhotosContainer from './styled-components/PhotosContainer';
 import ShowAllButton from './components/ShowAllButton';
 
 const AllPhotos = (props) => (
-	<Padding>
-		<PhotosContainer>
-			<Ratio>
-				<PhotosGrid>
-					<LeftPhoto
-						photo={props.photos[0]}
-						handleClick={props.handleClick}
-					/>
-					<MiddlePhotos
-						photo1={props.photos[1]}
-						photo2={props.photos[3]}
-						handleClick={props.handleClick}
-					/>
-					<EndPhotos
-						photo1={props.photos[2]}
-						photo2={props.photos[4]}
-						handleClick={props.handleClick}
-					/>
-				</PhotosGrid>
-				<ShowAllButton photo={props.photos[0]} />
-			</Ratio>
-		</PhotosContainer>
-	</Padding>
+    <Padding>
+        <PhotosContainer>
+            <Ratio>
+                <PhotosGrid>
+                    <LeftPhoto
+                        photo={props.photos[0]}
+                        handleClick={props.handleClick}
+                    />
+                    <MiddlePhotos
+                        photo1={props.photos[1]}
+                        photo2={props.photos[3]}
+                        handleClick={props.handleClick}
+                    />
+                    <EndPhotos
+                        photo1={props.photos[2]}
+                        photo2={props.photos[4]}
+                        handleClick={props.handleClick}
+                    />
+                    <ShowAllButton photo={props.photos[0]} />
+                </PhotosGrid>
+            </Ratio>
+        </PhotosContainer>
+    </Padding>
 );
 
 export default AllPhotos;
