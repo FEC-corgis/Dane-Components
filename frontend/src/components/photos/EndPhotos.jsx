@@ -1,13 +1,21 @@
 import React from 'react';
-import { EndImg, ContainerTopRight, ContainerBottomRight } from './styles';
+import EndImg from './styled-components/EndImg';
+import ContainerTopRight from './styled-components/ContainerTopRight';
+import ContainerBottomRight from './styled-components/ContainerBottomRight';
 
 const EndPhotos = (props) => {
   return (
     <React.Fragment>
-      <ContainerTopRight onClick={() => props.handleClick(props.photo1.id)}>
+      <ContainerTopRight
+        className={'photo-container'}
+        onClick={() => props.handleClick(props.photo1.id)}
+      >
         <EndImg src={props.photo1.link} alt={'house'} />
       </ContainerTopRight>
-      <ContainerBottomRight onClick={() => props.handleClick(props.photo2.id)}>
+      <ContainerBottomRight
+        className={'photo-container'}
+        onClick={() => props.handleClick(props.photo2.id)}
+      >
         <EndImg src={props.photo2.link} alt={'house'} />
       </ContainerBottomRight>
     </React.Fragment>

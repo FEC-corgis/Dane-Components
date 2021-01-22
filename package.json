@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve",
-    "server": "nodemon backend/server.js"
+    "server": "nodemon backend/server.js",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",

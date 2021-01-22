@@ -1,9 +1,13 @@
 import React from 'react';
-import { LeftContainer, LeftImg } from './styles';
+import LeftImg from './styled-components/LeftImg';
+import LeftContainer from './styled-components/LeftContainer';
 
 const LeftPhoto = (props) => {
   return (
-    <LeftContainer onClick={() => props.handleClick(props.photo.id)}>
+    <LeftContainer
+      className={'photo-container'}
+      onClick={() => props.handleClick(props.photo.id)}
+    >
       <LeftImg src={props.photo.link} alt={'house'} />
     </LeftContainer>
   );

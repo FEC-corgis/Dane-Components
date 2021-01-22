@@ -1,16 +1,13 @@
 import React, { useEffect } from 'react';
 import MobileNav from './nav/MobileNav';
 import PhotosGrid from './photo/PhotosGrid';
-import UseWindowSize from '../../../helpers/UseWindowSize';
-import styled from 'styled-components';
-import { ModalContainer } from '../Modal';
+import MobileModalContainer from './styled-components/MobileModalContainer';
 import { useDispatch, useSelector } from 'react-redux';
 import { handleGroupPhotos } from '../../../redux/slices/photos/PhotoSlice';
 
-const MobileModal = () => {
+const MobileModal = (props) => {
   const dispatch = useDispatch();
   const { modal, photos } = useSelector((state) => state);
-  const { width } = UseWindowSize();
 
   useEffect(() => {
     dispatch(handleGroupPhotos(photos.allPhotos));
@@ -21,7 +18,7 @@ const MobileModal = () => {
       <MobileNav />
       <div
         className={'fade-in'}
-        style={{ padding: width >= 743 ? '0 100px' : 0 }}
+        style={{ padding: props.width >= 743 ? '0 100px' : 0 }}
       >
         {photos.groups.map((group, i) => {
           return (
@@ -37,9 +34,5 @@ const MobileModal = () => {
     </MobileModalContainer>
   );
 };
-
-const MobileModalContainer = styled(ModalContainer)`
-  overflow: scroll;
-`;
 
 export default MobileModal;

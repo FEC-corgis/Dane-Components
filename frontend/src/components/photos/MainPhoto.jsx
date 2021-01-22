@@ -1,28 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
+import Flex from '../styled-components/Flex';
+import MainImg from './styled-components/MainImg';
+import JustMainContainer from './styled-components/JustMainContainer';
 
 const JustMain = (props) => (
   <Flex>
-    <MainContainer onClick={() => props.handleClick(props.photo.id)}>
+    <JustMainContainer onClick={() => props.handleClick(props.photo.id)}>
       <MainImg src={props.photo.link} alt={'house'} />
-    </MainContainer>
+    </JustMainContainer>
   </Flex>
 );
-
-const Flex = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const MainContainer = styled.div`
-  width: 743px;
-  cursor: pointer;
-`;
-
-const MainImg = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-`;
 
 export default JustMain;

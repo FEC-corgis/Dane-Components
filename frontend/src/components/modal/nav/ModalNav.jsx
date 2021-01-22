@@ -1,8 +1,10 @@
 import React from 'react';
+import Nav from './styled-components/Nav';
+import Icons from './Icons';
 import CloseButton from './CloseButton';
 import PhotoCount from './PhotoCount';
-import Icons from './Icons';
-import styled from 'styled-components';
+import NavSection from './styled-components/NavSection';
+import NavContainer from './styled-components/NavContainer';
 
 const ModalNav = (props) => (
   <NavSection style={{ position: props.height <= 500 && 'absolute' }}>
@@ -19,21 +21,5 @@ const ModalNav = (props) => (
     </NavContainer>
   </NavSection>
 );
-
-const NavSection = styled.section`
-  width: 100%;
-  height: 94px;
-  margin-bottom: 20px;
-`;
-
-const NavContainer = styled.div`
-  padding: 40px 40px 20px;
-`;
-
-const Nav = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
 
 export default ModalNav;

@@ -38,8 +38,11 @@ export const getPhotoState = (state) => state.photos;
 export const handleGetPhotos = () => async (dispatch) => {
   try {
     const photos = await getPhotos();
-    dispatch(setPhotos(photos));
-    dispatch(setCurrentPhoto({ current: photos[0], currentIndex: 0 }));
+
+    if (photos.length) {
+      dispatch(setPhotos(photos));
+      dispatch(setCurrentPhoto({ current: photos[0], currentIndex: 0 }));
+    }
   } catch (error) {
     console.log('ERROR IN PHOTO SLICE');
   }

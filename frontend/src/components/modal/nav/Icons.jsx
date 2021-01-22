@@ -1,13 +1,12 @@
 import React from 'react';
-import { IoShareOutline, IoHeartOutline } from 'react-icons/io5';
+import Share from './Icons/Share';
+import Save from './Icons/Save';
 
-const Icons = () => {
-  return (
-    <div className={'icon'}>
-      <IoShareOutline style={{ marginRight: '1rem' }} />
-      <IoHeartOutline />
-    </div>
-  );
-};
+const Icons = () => (
+  <div className={'icon'} style={{ display: 'flex' }}>
+    <Share />
+    <Save />
+  </div>
+);
 
 export default Icons;
