@@ -4,6 +4,7 @@ import MainPhoto from './MainPhoto';
 import TitleGrid from '../title/TitleGrid';
 import Desktop from './styled-components/Desktop';
 import Mobile from './styled-components/Mobile';
+import PhotosMobileNav from './components/PhotoMobileNav';
 import { useDispatch } from 'react-redux';
 import { setShowModal } from '../../redux/slices/modal/modalSlice';
 import { handleFindCurrent } from '../../redux/slices/photos/PhotoSlice';
@@ -24,6 +25,7 @@ const Photos = (props) => {
 			</Desktop>
 
 			<Mobile>
+				<PhotosMobileNav />
 				<MainPhoto photo={props.photos[0]} handleClick={handleClick} />
 				<TitleGrid showIcons={false} />
 			</Mobile>

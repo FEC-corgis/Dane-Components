@@ -7,7 +7,7 @@ const Modal = () => {
 	const { modal, photos } = useSelector((state) => state);
 
 	return (
-		<ModalContainer style={{ bottom: modal.showModal ? 0 : '-100%' }}>
+		<ModalContainer showModal={modal.showModal}>
 			<ModalContent photos={photos} />
 		</ModalContainer>
 	);
