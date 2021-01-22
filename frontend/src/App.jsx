@@ -9,12 +9,13 @@ import {
 	handleGetPhotos,
 } from './redux/slices/photos/PhotoSlice';
 
-const App = () => {
+const App = ({ match: { params } }) => {
 	const dispatch = useDispatch();
 	const { current, allPhotos } = useSelector(getPhotoState);
+	const { id } = params;
 
 	useEffect(() => {
-		dispatch(handleGetPhotos());
+		dispatch(handleGetPhotos(id));
 	}, []);
 
 	return (

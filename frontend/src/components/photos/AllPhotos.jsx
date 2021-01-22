@@ -6,6 +6,7 @@ import MiddlePhotos from './MiddlePhotos';
 import EndPhotos from './EndPhotos';
 import PhotosGrid from './styled-components/PhotosGrid';
 import PhotosContainer from './styled-components/PhotosContainer';
+import ShowAllButton from './components/ShowAllButton';
 
 const AllPhotos = (props) => (
 	<Padding>
@@ -27,6 +28,7 @@ const AllPhotos = (props) => (
 						handleClick={props.handleClick}
 					/>
 				</PhotosGrid>
+				<ShowAllButton photo={props.photos[0]} />
 			</Ratio>
 		</PhotosContainer>
 	</Padding>
