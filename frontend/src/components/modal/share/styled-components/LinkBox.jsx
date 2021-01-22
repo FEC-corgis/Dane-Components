@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export default styled.div`
-  max-height: 289px;
-  grid-column: 1 / 2;
-  cursor: pointer;
+  display: flex;
+  padding: 24px 0;
 `;

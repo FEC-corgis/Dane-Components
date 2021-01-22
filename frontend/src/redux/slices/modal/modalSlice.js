@@ -7,6 +7,7 @@ const modalSlice = createSlice({
     showModal: false,
     showPopup: true,
     saved: false,
+    showShareModal: false,
   },
   reducers: {
     setShowModal: (state, action) => {
@@ -27,10 +28,21 @@ const modalSlice = createSlice({
         saved: !state.saved,
       };
     },
+    setShowShareModal: (state, action) => {
+      return {
+        ...state,
+        showShareModal: action.payload,
+      };
+    },
   },
 });
 
-export const { setShowModal, setShowPopup, setSaved } = modalSlice.actions;
+export const {
+  setShowModal,
+  setShowPopup,
+  setSaved,
+  setShowShareModal,
+} = modalSlice.actions;
 export const getModalState = (state) => state.modal;
 
 export const handleTransition = (photo, index) => (dispatch) => {

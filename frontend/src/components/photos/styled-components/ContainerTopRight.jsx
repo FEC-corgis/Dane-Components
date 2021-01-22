@@ -9,6 +9,7 @@ export default styled.div`
   grid-row-start: 1;
   grid-row-end: span 1;
   cursor: pointer;
+  // max-height: 251.8px;
 
   &:hover::after {
     border-top-right-radius: 1rem;
