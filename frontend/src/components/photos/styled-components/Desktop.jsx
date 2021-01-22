@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export default styled.div`
-	font-size: 1rem;
+	display: none;
 
-	@media (max-height: 500px) {
-		display: none;
+	@media (min-width: 744px) {
+		display: block;
 	}
 `;

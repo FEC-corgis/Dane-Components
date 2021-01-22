@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export default styled.div`
-	font-size: 1rem;
+	display: flex;
 
 	@media (max-height: 500px) {
 		display: none;

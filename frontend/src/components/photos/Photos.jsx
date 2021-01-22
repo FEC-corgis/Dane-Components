@@ -2,6 +2,8 @@ import React from 'react';
 import AllPhotos from './AllPhotos';
 import MainPhoto from './MainPhoto';
 import TitleGrid from '../title/TitleGrid';
+import Desktop from './styled-components/Desktop';
+import Mobile from './styled-components/Mobile';
 import { useDispatch } from 'react-redux';
 import { setShowModal } from '../../redux/slices/modal/modalSlice';
 import { handleFindCurrent } from '../../redux/slices/photos/PhotoSlice';
@@ -16,23 +18,15 @@ const Photos = (props) => {
 
 	return (
 		<React.Fragment>
-			{props.width > 743 ? (
-				<React.Fragment>
-					<TitleGrid showIcons={true} />
-					<AllPhotos
-						photos={props.photos}
-						handleClick={handleClick}
-					/>
-				</React.Fragment>
-			) : (
-				<React.Fragment>
-					<MainPhoto
-						photo={props.photos[0]}
-						handleClick={handleClick}
-					/>
-					<TitleGrid showIcons={false} />
-				</React.Fragment>
-			)}
+			<Desktop>
+				<TitleGrid showIcons={true} />
+				<AllPhotos photos={props.photos} handleClick={handleClick} />
+			</Desktop>
+
+			<Mobile>
+				<MainPhoto photo={props.photos[0]} handleClick={handleClick} />
+				<TitleGrid showIcons={false} />
+			</Mobile>
 		</React.Fragment>
 	);
 };

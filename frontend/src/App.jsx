@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Modal from './components/modal/Modal';
 import Photos from './components/photos/Photos';
-import UseWindowSize from './helpers/UseWindowSize';
 import MobileModal from './components/modal/mobile/MobileModal';
 import ShareModal from './components/modal/share/ShareModal';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,7 +11,6 @@ import {
 
 const App = () => {
 	const dispatch = useDispatch();
-	const { width, height } = UseWindowSize();
 	const { current, allPhotos } = useSelector(getPhotoState);
 
 	useEffect(() => {
@@ -23,8 +21,9 @@ const App = () => {
 		current && (
 			<React.Fragment>
 				<ShareModal />
-				{width > 1127 ? <Modal height={height} /> : <MobileModal />}
-				<Photos photos={allPhotos} width={width} />
+				<Modal />
+				<MobileModal />
+				<Photos photos={allPhotos} />
 			</React.Fragment>
 		)
 	);

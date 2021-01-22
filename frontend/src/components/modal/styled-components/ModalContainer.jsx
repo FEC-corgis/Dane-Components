@@ -7,4 +7,8 @@ export default styled.div`
 	background-color: white;
 	z-index: 5;
 	transition: opacity 0.4s ease-out, bottom 0.4s ease-out;
+
+	@media (max-width: 1127px) {
+		display: none;
+	}
 `;
