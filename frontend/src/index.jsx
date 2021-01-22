@@ -7,10 +7,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './index.css';
 
 ReactDOM.render(
-	<Router>
-		<Provider store={store}>
-			<Route exact path={'/rooms/:id'} component={App} />
-		</Provider>
-	</Router>,
-	document.getElementById('root')
+    <Router>
+        <Provider store={store}>
+            <Route exact path={'/rooms/:id'} component={App} />
+        </Provider>
+    </Router>,
+    document.getElementById('root')
 );
