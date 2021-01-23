@@ -7,19 +7,19 @@ import { setShowModal } from '../../../redux/slices/modal/modalSlice';
 import { setCurrentPhoto } from '../../../redux/slices/photos/PhotoSlice';
 
 const ShowAllButton = (props) => {
-	const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-	const handleClick = () => {
-		dispatch(setShowModal(true));
-		dispatch(setCurrentPhoto({ current: props.photo, currentIndex: 0 }));
-	};
+    const handleClick = () => {
+        dispatch(setShowModal(true));
+        dispatch(setCurrentPhoto({ current: props.photo, currentIndex: 0 }));
+    };
 
-	return (
-		<ShowAllButtonShell onClick={handleClick}>
-			<SVG src={svg} alt={'show-all'} />
-			<div>Show all photos</div>
-		</ShowAllButtonShell>
-	);
+    return (
+        <ShowAllButtonShell onClick={handleClick}>
+            <SVG src={svg} alt={'show-all'} />
+            <div>Show all photos</div>
+        </ShowAllButtonShell>
+    );
 };
 
 export default ShowAllButton;
