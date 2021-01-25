@@ -11,7 +11,7 @@ import {
     setCurrentPhoto,
 } from '../../../../../../redux/slices/photos/PhotoSlice';
 
-test('clicking on any photo should activate the main modal', (done) => {
+test('clicking on any photo should activate the main modal, photo 1', (done) => {
     store.dispatch(setPhotos(mockData));
     store.dispatch(setCurrentPhoto({ current: mockData[0], currentIndex: 0 }));
 
