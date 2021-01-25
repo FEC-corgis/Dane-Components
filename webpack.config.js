@@ -3,51 +3,51 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-	entry: path.resolve(__dirname, 'frontend', 'src', 'index.jsx'),
-	mode: 'development',
-	output: {
-		path: path.resolve(__dirname, 'frontend', 'dist'),
-		filename: 'bundle.js',
-		publicPath: '/',
-	},
-	module: {
-		rules: [
-			{ test: /\.jsx$/, use: 'babel-loader', exclude: /node_modules/ },
-			{
-				test: /\.js$/,
-				enforce: 'pre',
-				use: 'source-map-loader',
-			},
-			{
-				test: /\.css$/,
-				use: [MiniCssExtractPlugin.loader, 'css-loader'],
-			},
-			{
-				test: /\.svg$/,
-				use: 'file-loader',
-			},
-		],
-	},
-	devServer: {
-		contentBase: path.resolve(__dirname, 'frontend', 'dist'),
-		compress: true,
-		port: 3000,
-		historyApiFallback: true,
-	},
-	resolve: {
-		extensions: ['.jsx', '.js'],
-	},
-	plugins: [
-		new HtmlWebpackPlugin({
-			template: path.resolve(
-				__dirname,
-				'frontend',
-				'public',
-				'index.html'
-			),
-			title: 'Hosted By Service',
-		}),
-		new MiniCssExtractPlugin(),
-	],
-	devtool: 'source-map',
+    entry: [path.resolve(__dirname, 'frontend', 'src', 'index.jsx')],
+    mode: 'development',
+    output: {
+        path: path.resolve(__dirname, 'frontend', 'dist'),
+        filename: 'bundle.js',
+        publicPath: '/',
+    },
+    module: {
+        rules: [
+            { test: /\.jsx$/, use: 'babel-loader', exclude: /node_modules/ },
+            {
+                test: /\.js$/,
+                enforce: 'pre',
+                use: 'source-map-loader',
+            },
+            {
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+            },
+            {
+                test: /\.svg$/,
+                use: 'file-loader',
+            },
+        ],
+    },
+    devServer: {
+        contentBase: path.resolve(__dirname, 'frontend', 'dist'),
+        compress: true,
+        port: 3000,
+        historyApiFallback: true,
+    },
+    resolve: {
+        extensions: ['.jsx', '.js'],
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.resolve(
+                __dirname,
+                'frontend',
+                'public',
+                'index.html'
+            ),
+            title: 'FEC Corgis',
+        }),
+        new MiniCssExtractPlugin(),
+    ],
+    devtool: 'source-map',
 };

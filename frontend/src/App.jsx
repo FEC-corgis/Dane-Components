@@ -5,29 +5,29 @@ import MobileModal from './components/modal/mobile/MobileModal';
 import ShareModal from './components/modal/share/ShareModal';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-	getPhotoState,
-	handleGetPhotos,
+    getPhotoState,
+    handleGetPhotos,
 } from './redux/slices/photos/PhotoSlice';
 
 const App = ({ match: { params } }) => {
-	const dispatch = useDispatch();
-	const { current, allPhotos } = useSelector(getPhotoState);
-	const { id } = params;
+    const dispatch = useDispatch();
+    const { current, allPhotos } = useSelector(getPhotoState);
+    const { id } = params;
 
-	useEffect(() => {
-		dispatch(handleGetPhotos(id));
-	}, []);
+    useEffect(() => {
+        dispatch(handleGetPhotos(id));
+    }, []);
 
-	return (
-		current && (
-			<React.Fragment>
-				<ShareModal />
-				<Modal />
-				<MobileModal />
-				<Photos photos={allPhotos} />
-			</React.Fragment>
-		)
-	);
+    return (
+        current && (
+            <React.Fragment>
+                <ShareModal />
+                <Modal />
+                <MobileModal />
+                <Photos photos={allPhotos} />
+            </React.Fragment>
+        )
+    );
 };
 
 export default App;
