@@ -15,9 +15,12 @@ const Save = () => {
     return (
         <IconGroup onClick={() => dispatch(setSaved())}>
             {saved ? (
-                <IoHeartSharp style={{ color: 'red' }} />
+                <IoHeartSharp
+                    style={{ color: 'red' }}
+                    title={'save-icon-red'}
+                />
             ) : (
-                <IoHeartOutline />
+                <IoHeartOutline title={'save-icon'} />
             )}
             <Underline>{saved ? 'Saved' : 'Save'}</Underline>
         </IconGroup>
