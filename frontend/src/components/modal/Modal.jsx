@@ -3,14 +3,14 @@ import ModalContent from './content/ModalContent';
 import ModalContainer from './styled-components/ModalContainer';
 import { useSelector } from 'react-redux';
 
-const Modal = (props) => {
-  const { modal, photos } = useSelector((state) => state);
+const Modal = () => {
+	const { modal, photos } = useSelector((state) => state);
 
-  return (
-    <ModalContainer style={{ bottom: modal.showModal ? 0 : '-100vh' }}>
-      <ModalContent photos={photos} height={props.height} />
-    </ModalContainer>
-  );
+	return (
+		<ModalContainer showModal={modal.showModal}>
+			<ModalContent photos={photos} />
+		</ModalContainer>
+	);
 };
 
 export default Modal;
