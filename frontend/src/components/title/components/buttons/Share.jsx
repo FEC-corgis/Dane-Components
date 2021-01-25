@@ -9,7 +9,7 @@ const Share = () => {
     const dispatch = useDispatch();
     return (
         <IconGroup onClick={() => dispatch(setShowShareModal(true))}>
-            <IoShareOutline />
+            <IoShareOutline title={'share-icon'} />
             <Underline>Share</Underline>
         </IconGroup>
     );
