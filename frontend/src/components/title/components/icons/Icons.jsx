@@ -1,6 +1,6 @@
 import React from 'react';
-import Share from '../../buttons/Share';
-import Save from '../../buttons/Save';
+import Share from '../buttons/Share';
+import Save from '../buttons/Save';
 
 const Icons = () => (
     <React.Fragment>
