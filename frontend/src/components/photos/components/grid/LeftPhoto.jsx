@@ -5,6 +5,7 @@ import LeftContainer from '../../styled-components/LeftContainer';
 const LeftPhoto = (props) => (
     <LeftContainer
         className={'photo-container'}
+        data-testid={'left-photo-container'}
         onClick={() => props.handleClick(props.photo.id)}
     >
         <LeftImg src={props.photo.link} alt={'house'} />

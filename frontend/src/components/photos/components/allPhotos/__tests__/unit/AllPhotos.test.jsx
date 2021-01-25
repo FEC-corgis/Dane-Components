@@ -1,7 +1,7 @@
 import React from 'react';
-import AllPhotos from '../AllPhotos';
-import data from '../../../../../mocks/data';
-import { store } from '../../../../../redux/store';
+import AllPhotos from '../../AllPhotos';
+import data from '../../../../../../mocks/data';
+import { store } from '../../../../../../redux/store';
 import { Provider } from 'react-redux';
 import { render, screen } from '@testing-library/react';
 
