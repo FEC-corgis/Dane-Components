@@ -1,12 +1,12 @@
 import React from 'react';
-import Ratio from './styled-components/Ratio';
-import Padding from './styled-components/Padding';
-import LeftPhoto from './LeftPhoto';
-import MiddlePhotos from './MiddlePhotos';
-import EndPhotos from './EndPhotos';
-import PhotosGrid from './styled-components/PhotosGrid';
-import PhotosContainer from './styled-components/PhotosContainer';
-import ShowAllButton from './components/ShowAllButton';
+import Ratio from '../../styled-components/Ratio';
+import Padding from '../../styled-components/Padding';
+import LeftPhoto from '../grid/LeftPhoto';
+import MiddlePhotos from '../grid/MiddlePhotos';
+import EndPhotos from '../grid/EndPhotos';
+import PhotosGrid from '../../styled-components/PhotosGrid';
+import PhotosContainer from '../../styled-components/PhotosContainer';
+import ShowAllButton from '../ShowAllButton';
 
 const AllPhotos = (props) => (
     <Padding>
