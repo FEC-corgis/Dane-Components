@@ -1,32 +1,14 @@
 const router = require('express').Router();
-const Photo = require('../models/Photo');
-const Property = require('../models/Property');
-const {
-    handleHeaderServiceResponse,
-} = require('./responseHandlers/headerServiceRespnse');
+const client = require('redis').createClient();
+const HostedByRepository = require('../repositories/HostedByRepo');
 
 router.get('/:propertyId', async (req, res) => {
+    const repo = new HostedByRepository(req.params.propertyId);
     try {
-        const photos = await Photo.findAll({
-            where: { PropertyId: req.params.propertyId },
-            include: [{ model: Property }],
-        });
+        const response = await repo.getData();
+        const cacheData = JSON.stringify(response);
 
-        // get number of reviews and rating
-        const dummyReviewData = { rating: 4.52, numberOfReviews: 151 };
-
-        // get location
-        const dummyLocationData = {
-            city: 'South Lake Tahoe',
-            state: 'California',
-            country: 'United States',
-        };
-        const response = handleHeaderServiceResponse(
-            photos,
-            dummyReviewData,
-            dummyLocationData
-        );
-
+        client.setex(req.params.propertyId, 3600, cacheData);
         return res.status(200).json(response);
     } catch (error) {
         return res.status(500).json({ message: 'Internal server error' });
