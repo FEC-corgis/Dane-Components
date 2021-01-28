@@ -6,7 +6,7 @@ import ShareModal from './components/modal/share/ShareModal';
 import { useDispatch, useSelector } from 'react-redux';
 import {
     getPhotoState,
-    handleGetPhotos,
+    handleGetServiceData,
 } from './redux/slices/photos/PhotoSlice';
 
 const App = ({ match: { params } }) => {
@@ -15,7 +15,7 @@ const App = ({ match: { params } }) => {
     const { id } = params;
 
     useEffect(() => {
-        dispatch(handleGetPhotos(id));
+        dispatch(handleGetServiceData(id));
     }, []);
 
     return (

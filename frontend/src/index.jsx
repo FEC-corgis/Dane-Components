@@ -12,5 +12,5 @@ ReactDOM.render(
             <Route exact path={'/rooms/:id'} component={App} />
         </Provider>
     </Router>,
-    document.getElementById('root')
+    document.getElementById('header')
 );
