@@ -1,7 +1,7 @@
 import React from 'react';
 import AllPhotos from './components/allPhotos/AllPhotos';
 import MainPhoto from './components/MainPhoto';
-import TitleGrid from '../title/TitleGrid';
+import Title from '../title/Title';
 import Desktop from './styled-components/Desktop';
 import Mobile from './styled-components/Mobile';
 import PhotosMobileNav from './components/PhotoMobileNav';
@@ -20,14 +20,14 @@ const Photos = (props) => {
     return (
         <React.Fragment>
             <Desktop>
-                <TitleGrid showIcons={true} />
+                <Title showIcons={true} />
                 <AllPhotos photos={props.photos} handleClick={handleClick} />
             </Desktop>
 
             <Mobile>
                 <PhotosMobileNav />
                 <MainPhoto photo={props.photos[0]} handleClick={handleClick} />
-                <TitleGrid showIcons={false} />
+                <Title showIcons={false} />
             </Mobile>
         </React.Fragment>
     );

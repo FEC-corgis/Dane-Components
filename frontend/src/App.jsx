@@ -20,12 +20,12 @@ const App = ({ match: { params } }) => {
 
     return (
         current && (
-            <React.Fragment>
+            <section>
                 <ShareModal />
                 <Modal />
                 <MobileModal />
                 <Photos photos={allPhotos} />
-            </React.Fragment>
+            </section>
         )
     );
 };
