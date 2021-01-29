@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import { getHeaderState } from '../../../../redux/slices/photos/HeaderServiceSlice';
 
 const Details = () => {
-    const { location, reviews } = useSelector(getHeaderState);
+    const { location, reviews, host } = useSelector(getHeaderState);
 
     return (
         <React.Fragment>
@@ -19,9 +19,13 @@ const Details = () => {
                 <RatingText>{reviews.rating}</RatingText>
                 <GreyText>({`${reviews.numberOfReviews}`})&nbsp;</GreyText>
                 <GreyText>·&nbsp;</GreyText>
-                <SuperHost />
-                <GreyText>Superhost&nbsp;</GreyText>
-                <GreyText>·&nbsp;</GreyText>
+                {host.isSuperhost && (
+                    <React.Fragment>
+                        <SuperHost />
+                        <GreyText>Superhost&nbsp;</GreyText>
+                        <GreyText>·&nbsp;</GreyText>
+                    </React.Fragment>
+                )}
                 <GreyText>{`${location.city}, ${location.state}, ${location.country}`}</GreyText>
             </DetailsContainer>
         </React.Fragment>

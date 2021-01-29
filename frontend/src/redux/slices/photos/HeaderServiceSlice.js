@@ -19,6 +19,9 @@ const headerServiceSlice = createSlice({
             state: '',
             country: '',
         },
+        host: {
+            isSuperhost: false,
+        },
     },
     reducers: {
         setPhotos: (state, action) => {
@@ -61,6 +64,14 @@ const headerServiceSlice = createSlice({
                 location: action.payload,
             };
         },
+        setHost: (state, action) => {
+            return {
+                ...state,
+                host: {
+                    ...action.payload,
+                },
+            };
+        },
     },
 });
 
@@ -70,6 +81,7 @@ export const {
     setGroups,
     setReviews,
     setLocation,
+    setHost,
 } = headerServiceSlice.actions;
 
 export const getHeaderState = (state) => state.header;
@@ -77,13 +89,14 @@ export const getPhotoState = (state) => state.header.photos;
 
 export const handleGetServiceData = (id) => async (dispatch) => {
     try {
-        const { photos, location, reviews } = await getServiceData(id);
+        const { photos, location, reviews, host } = await getServiceData(id);
 
         if (photos.length) {
             dispatch(setPhotos(photos));
             dispatch(setCurrentPhoto({ current: photos[0], currentIndex: 0 }));
             dispatch(setReviews(reviews));
             dispatch(setLocation(location));
+            dispatch(setHost(host));
         }
     } catch (error) {
         console.log('ERROR IN PHOTO SLICE');

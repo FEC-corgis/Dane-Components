@@ -21,3 +21,16 @@ test('should render data dynamically from the store', (done) => {
         done();
     }, 1500);
 });
+
+test('should only display superhost badge if host is a superhost', (done) => {
+    store.dispatch(handleGetServiceData(2));
+    render(
+        <Provider store={store}>
+            <Details />
+        </Provider>
+    );
+    setTimeout(() => {
+        expect(screen.queryByText('Superhost')).not.toBeInTheDocument();
+        done();
+    }, 1500);
+});

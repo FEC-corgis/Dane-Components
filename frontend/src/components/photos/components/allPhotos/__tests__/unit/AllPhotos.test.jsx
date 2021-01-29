@@ -8,12 +8,12 @@ import { render, screen } from '@testing-library/react';
 test('should render first five images in data set', async () => {
     render(
         <Provider store={store}>
-            <AllPhotos photos={mockData.photos} />
+            <AllPhotos photos={mockData[0].photos} />
         </Provider>
     );
 
     const images = await screen.findAllByRole('img', { name: 'house' });
 
-    expect(mockData.photos.length).toBe(10);
+    expect(mockData[0].photos.length).toBe(10);
     expect(images).toHaveLength(5);
 });
