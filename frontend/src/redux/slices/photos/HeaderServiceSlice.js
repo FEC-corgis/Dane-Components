@@ -20,6 +20,7 @@ const headerServiceSlice = createSlice({
             return {
                 ...state,
                 photos: {
+                    ...state.photos,
                     allPhotos: action.payload,
                 },
             };
@@ -28,6 +29,7 @@ const headerServiceSlice = createSlice({
             return {
                 ...state,
                 photos: {
+                    ...state.photos,
                     current: action.payload.current,
                     currentIndex: action.payload.currentIndex,
                 },
@@ -37,6 +39,7 @@ const headerServiceSlice = createSlice({
             return {
                 ...state,
                 photos: {
+                    ...state.photos,
                     groups: action.payload,
                 },
             };
@@ -50,6 +53,7 @@ export const {
     setGroups,
 } = headerServiceSlice.actions;
 export const getHeaderState = (state) => state.header;
+export const getPhotoState = (state) => state.header.photos;
 
 export const handleGetServiceData = (id) => async (dispatch) => {
     try {

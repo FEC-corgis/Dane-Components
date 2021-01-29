@@ -5,30 +5,26 @@ import MobileModal from './components/modal/mobile/MobileModal';
 import ShareModal from './components/modal/share/ShareModal';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-    getHeaderState,
+    getPhotoState,
     handleGetServiceData,
 } from './redux/slices/photos/HeaderServiceSlice';
 
 const App = ({ match: { params } }) => {
     const dispatch = useDispatch();
-    const { header } = useSelector(getHeaderState);
-    console.log(header);
-    // const { current, allPhotos } = header.photos;
+    const { current, allPhotos } = useSelector(getPhotoState);
     const { id } = params;
 
     useEffect(() => {
-        console.log(id);
         dispatch(handleGetServiceData(id));
     }, [id, dispatch]);
 
     return (
-        header &&
-        header.current && (
+        current && (
             <section>
                 <ShareModal />
                 <Modal />
                 <MobileModal />
-                <Photos photos={header.allPhotos} />
+                <Photos photos={allPhotos} />
             </section>
         )
     );

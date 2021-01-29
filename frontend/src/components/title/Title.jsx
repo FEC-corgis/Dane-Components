@@ -4,16 +4,14 @@ import PropertyName from './styled-components/PropertyName';
 import TitleContainer from './styled-components/TitleContainer';
 import TitleBox from './styled-components/TitleBox';
 import { useSelector } from 'react-redux';
-import { getHeaderState } from '../../redux/slices/photos/HeaderServiceSlice';
+import { getPhotoState } from '../../redux/slices/photos/HeaderServiceSlice';
 
 const Title = (props) => {
-    const { photos } = useSelector(getHeaderState);
+    const { allPhotos } = useSelector(getPhotoState);
     return (
         <TitleContainer>
             <TitleBox>
-                <PropertyName>
-                    {photos.allPhotos[0].Property.title}
-                </PropertyName>
+                <PropertyName>{allPhotos[0].Property.title}</PropertyName>
                 <Header showIcons={props.showIcons} />
             </TitleBox>
         </TitleContainer>
