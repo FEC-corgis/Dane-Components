@@ -4,7 +4,7 @@ import SVG from '../styled-components/SVG';
 import svg from './icon/icon.svg';
 import { useDispatch } from 'react-redux';
 import { setShowModal } from '../../../redux/slices/modal/modalSlice';
-import { setCurrentPhoto } from '../../../redux/slices/photos/PhotoSlice';
+import { setCurrentPhoto } from '../../../redux/slices/photos/HeaderServiceSlice';
 
 const ShowAllButton = (props) => {
     const dispatch = useDispatch();

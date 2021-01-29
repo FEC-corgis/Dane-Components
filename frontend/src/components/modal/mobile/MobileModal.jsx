@@ -4,7 +4,7 @@ import PhotosGrid from './photo/PhotosGrid';
 import FadeIn from './styled-components/FadeIn';
 import MobileModalContainer from './styled-components/MobileModalContainer';
 import { useDispatch, useSelector } from 'react-redux';
-import { handleGroupPhotos } from '../../../redux/slices/photos/PhotoSlice';
+import { handleGroupPhotos } from '../../../redux/slices/photos/HeaderServiceSlice';
 
 const MobileModal = () => {
     const dispatch = useDispatch();

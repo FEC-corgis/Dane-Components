@@ -5,13 +5,13 @@ import MobileModal from './components/modal/mobile/MobileModal';
 import ShareModal from './components/modal/share/ShareModal';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-    getPhotoState,
+    getHeaderState,
     handleGetServiceData,
-} from './redux/slices/photos/PhotoSlice';
+} from './redux/slices/photos/HeaderServiceSlice';
 
 const App = ({ match: { params } }) => {
     const dispatch = useDispatch();
-    const { current, allPhotos } = useSelector(getPhotoState);
+    const { current, allPhotos } = useSelector(getHeaderState);
     const { id } = params;
 
     useEffect(() => {

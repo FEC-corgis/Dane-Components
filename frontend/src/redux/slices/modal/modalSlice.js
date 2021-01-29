@@ -1,57 +1,57 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { setCurrentPhoto } from '../photos/PhotoSlice';
+import { setCurrentPhoto } from '../photos/HeaderServiceSlice';
 
 const modalSlice = createSlice({
-  name: 'modal',
-  initialState: {
-    showModal: false,
-    showPopup: true,
-    saved: false,
-    showShareModal: false,
-  },
-  reducers: {
-    setShowModal: (state, action) => {
-      return {
-        ...state,
-        showModal: action.payload,
-      };
+    name: 'modal',
+    initialState: {
+        showModal: false,
+        showPopup: true,
+        saved: false,
+        showShareModal: false,
     },
-    setShowPopup: (state, action) => {
-      return {
-        ...state,
-        showPopup: action.payload,
-      };
+    reducers: {
+        setShowModal: (state, action) => {
+            return {
+                ...state,
+                showModal: action.payload,
+            };
+        },
+        setShowPopup: (state, action) => {
+            return {
+                ...state,
+                showPopup: action.payload,
+            };
+        },
+        setSaved: (state) => {
+            return {
+                ...state,
+                saved: !state.saved,
+            };
+        },
+        setShowShareModal: (state, action) => {
+            return {
+                ...state,
+                showShareModal: action.payload,
+            };
+        },
     },
-    setSaved: (state) => {
-      return {
-        ...state,
-        saved: !state.saved,
-      };
-    },
-    setShowShareModal: (state, action) => {
-      return {
-        ...state,
-        showShareModal: action.payload,
-      };
-    },
-  },
 });
 
 export const {
-  setShowModal,
-  setShowPopup,
-  setSaved,
-  setShowShareModal,
+    setShowModal,
+    setShowPopup,
+    setSaved,
+    setShowShareModal,
 } = modalSlice.actions;
 export const getModalState = (state) => state.modal;
 
 export const handleTransition = (photo, index) => (dispatch) => {
-  dispatch(setShowPopup(false));
+    dispatch(setShowPopup(false));
 
-  setTimeout(() => {
-    dispatch(setCurrentPhoto({ current: photo, currentIndex: index }));
-    dispatch(setShowPopup(true));
-  }, 150);
+    setTimeout(() => {
+        dispatch(setCurrentPhoto({ current: photo, currentIndex: index }));
+        dispatch(setShowPopup(true));
+    }, 150);
 };
 
 export default modalSlice.reducer;

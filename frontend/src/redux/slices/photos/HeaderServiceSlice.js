@@ -1,13 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getServiceData } from './helpers';
 
-const photoSlice = createSlice({
-    name: 'photos',
+const headerServiceSlice = createSlice({
+    name: 'header',
     initialState: {
         allPhotos: [],
         current: null,
         currentIndex: 0,
         groups: [],
+        reviews: {
+            numberOfReviews: 0,
+            rating: 4.52,
+        },
     },
     reducers: {
         setPhotos: (state, action) => {
@@ -32,8 +36,12 @@ const photoSlice = createSlice({
     },
 });
 
-export const { setPhotos, setCurrentPhoto, setGroups } = photoSlice.actions;
-export const getPhotoState = (state) => state.photos;
+export const {
+    setPhotos,
+    setCurrentPhoto,
+    setGroups,
+} = headerServiceSlice.actions;
+export const getHeaderState = (state) => state.photos;
 
 export const handleGetServiceData = (id) => async (dispatch) => {
     try {
@@ -65,4 +73,4 @@ export const handleGroupPhotos = (photos) => (dispatch) => {
     dispatch(setGroups(groups));
 };
 
-export default photoSlice.reducer;
+export default headerServiceSlice.reducer;

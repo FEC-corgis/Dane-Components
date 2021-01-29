@@ -4,13 +4,13 @@ import ModalContainer from './styled-components/ModalContainer';
 import { useSelector } from 'react-redux';
 
 const Modal = () => {
-	const { modal, photos } = useSelector((state) => state);
+    const { modal, header } = useSelector((state) => state);
 
-	return (
-		<ModalContainer showModal={modal.showModal}>
-			<ModalContent photos={photos} />
-		</ModalContainer>
-	);
+    return (
+        <ModalContainer showModal={modal.showModal}>
+            <ModalContent photos={photos} />
+        </ModalContainer>
+    );
 };
 
 export default Modal;
