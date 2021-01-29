@@ -12,7 +12,7 @@ const MobileModal = () => {
 
     useEffect(() => {
         dispatch(handleGroupPhotos(photos.allPhotos));
-    }, [photos.allPhotos]);
+    }, [photos.allPhotos, dispatch]);
 
     return (
         <MobileModalContainer

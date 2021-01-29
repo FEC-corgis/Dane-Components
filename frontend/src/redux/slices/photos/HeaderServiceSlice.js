@@ -4,10 +4,12 @@ import { getServiceData } from './helpers';
 const headerServiceSlice = createSlice({
     name: 'header',
     initialState: {
-        allPhotos: [],
-        current: null,
-        currentIndex: 0,
-        groups: [],
+        photos: {
+            allPhotos: [],
+            current: null,
+            currentIndex: 0,
+            groups: [],
+        },
         reviews: {
             numberOfReviews: 0,
             rating: 4.52,
@@ -17,20 +19,26 @@ const headerServiceSlice = createSlice({
         setPhotos: (state, action) => {
             return {
                 ...state,
-                allPhotos: action.payload,
+                photos: {
+                    allPhotos: action.payload,
+                },
             };
         },
         setCurrentPhoto: (state, action) => {
             return {
                 ...state,
-                current: action.payload.current,
-                currentIndex: action.payload.currentIndex,
+                photos: {
+                    current: action.payload.current,
+                    currentIndex: action.payload.currentIndex,
+                },
             };
         },
         setGroups: (state, action) => {
             return {
                 ...state,
-                groups: action.payload,
+                photos: {
+                    groups: action.payload,
+                },
             };
         },
     },
@@ -41,7 +49,7 @@ export const {
     setCurrentPhoto,
     setGroups,
 } = headerServiceSlice.actions;
-export const getHeaderState = (state) => state.photos;
+export const getHeaderState = (state) => state.header;
 
 export const handleGetServiceData = (id) => async (dispatch) => {
     try {

@@ -11,20 +11,24 @@ import {
 
 const App = ({ match: { params } }) => {
     const dispatch = useDispatch();
-    const { current, allPhotos } = useSelector(getHeaderState);
+    const { header } = useSelector(getHeaderState);
+    console.log(header);
+    // const { current, allPhotos } = header.photos;
     const { id } = params;
 
     useEffect(() => {
+        console.log(id);
         dispatch(handleGetServiceData(id));
     }, [id, dispatch]);
 
     return (
-        current && (
+        header &&
+        header.current && (
             <section>
                 <ShareModal />
                 <Modal />
                 <MobileModal />
-                <Photos photos={allPhotos} />
+                <Photos photos={header.allPhotos} />
             </section>
         )
     );

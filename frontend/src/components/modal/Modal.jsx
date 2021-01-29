@@ -8,7 +8,7 @@ const Modal = () => {
 
     return (
         <ModalContainer showModal={modal.showModal}>
-            <ModalContent photos={photos} />
+            <ModalContent photos={header.photos} />
         </ModalContainer>
     );
 };
