@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/header/Header';
 import PropertyName from './styled-components/PropertyName';
-import TitleContainer from './TitleContainer';
+import TitleContainer from './styled-components/TitleContainer';
 import TitleBox from './styled-components/TitleBox';
 import { useSelector } from 'react-redux';
 import { getPhotoState } from '../../redux/slices/photos/PhotoSlice';
