@@ -1,5 +1,6 @@
 import React from 'react';
-import Hover from '../styled-components/Hover';
+import IconGroup from './styled-components/IconGroup';
+import Underline from './styled-components/Underline';
 import { useDispatch, useSelector } from 'react-redux';
 import { IoHeartOutline, IoHeartSharp } from 'react-icons/io5';
 import {
@@ -12,13 +13,17 @@ const Save = () => {
     const { saved } = useSelector(getModalState);
 
     return (
-        <Hover onClick={() => dispatch(setSaved())}>
+        <IconGroup onClick={() => dispatch(setSaved())}>
             {saved ? (
-                <IoHeartSharp style={{ color: 'red' }} />
+                <IoHeartSharp
+                    style={{ color: 'red' }}
+                    title={'save-icon-red'}
+                />
             ) : (
-                <IoHeartOutline />
+                <IoHeartOutline title={'save-icon'} />
             )}
-        </Hover>
+            <Underline>{saved ? 'Saved' : 'Save'}</Underline>
+        </IconGroup>
     );
 };
 
