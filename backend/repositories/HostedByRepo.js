@@ -1,5 +1,6 @@
 const Photo = require('../models/Photo');
 const Property = require('../models/Property');
+const axios = require('axios');
 
 class HostedByRepository {
     constructor(id) {
@@ -8,6 +9,7 @@ class HostedByRepository {
             photos: {},
             location: {},
             reviews: {},
+            isSuperhost: false,
         };
     }
 
@@ -32,10 +34,20 @@ class HostedByRepository {
         this.data.reviews = { rating: 4.52, numberOfReviews: 151 };
     }
 
+    async getSuperhostStatus() {
+        const { hostId } = await Property.findByPk(this.id);
+        const { data } = await axios.get(
+            `http://localhost:5002/api/hostedbyService/superhost/${hostId}`
+        );
+
+        this.data.isSuperhost = data;
+    }
+
     async getData() {
         await this.getPhotos();
         await this.getLocation();
         await this.getReviews();
+        await this.getSuperhostStatus();
 
         return this.data;
     }

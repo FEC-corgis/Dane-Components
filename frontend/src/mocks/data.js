@@ -176,9 +176,8 @@ export const mockData = [
             rating: 4.52,
             numberOfReviews: 151,
         },
-        host: {
-            isSuperhost: true,
-        },
+
+        isSuperhost: true,
     },
     {
         photos: [
@@ -273,8 +272,6 @@ export const mockData = [
             rating: 4.52,
             numberOfReviews: 151,
         },
-        host: {
-            isSuperhost: false,
-        },
+        isSuperhost: false,
     },
 ];
