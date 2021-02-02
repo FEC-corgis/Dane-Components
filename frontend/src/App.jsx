@@ -6,29 +6,32 @@ import MobileModal from './components/modal/mobile/MobileModal';
 import ShareModal from './components/modal/share/ShareModal';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-    getPhotoState,
+    getHeaderState,
     handleGetServiceData,
 } from './redux/slices/photos/HeaderServiceSlice';
 
 const App = ({ match: { params } }) => {
     const dispatch = useDispatch();
-    const { current, allPhotos } = useSelector(getPhotoState);
+    const { loading, photos } = useSelector(getHeaderState);
+    const { allPhotos } = photos;
     const { id } = params;
 
     useEffect(() => {
         dispatch(handleGetServiceData(id));
     }, [id, dispatch]);
 
-    return current ? (
+    return (
         <section>
-            <ShareModal />
-            <Modal />
-            <MobileModal />
-            <Photos photos={allPhotos} />
-        </section>
-    ) : (
-        <section>
-            <LoadingPhotos />
+            {loading ? (
+                <LoadingPhotos />
+            ) : (
+                <React.Fragment>
+                    <ShareModal />
+                    <Modal />
+                    <MobileModal />
+                    <Photos photos={allPhotos} />
+                </React.Fragment>
+            )}
         </section>
     );
 };
