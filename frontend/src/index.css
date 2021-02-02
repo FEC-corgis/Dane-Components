@@ -99,3 +99,19 @@
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
         'Helvetica Neue', sans-serif !important;
 }
+
+.loading-photo {
+    background-color: #ccc;
+    animation: fadeInOut 1.8s infinite linear;
+}
+
+@keyframes fadeInOut {
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
