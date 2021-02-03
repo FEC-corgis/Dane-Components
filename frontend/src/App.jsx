@@ -16,7 +16,7 @@ const App = ({ match: { params } }) => {
         dispatch(handleGetServiceData(id));
     }, [id, dispatch]);
 
-    return <LoadingApp />;
+    return loading ? <LoadingApp /> : <LoadedApp />;
 };
 
 export default App;
