@@ -16,7 +16,7 @@ const App = ({ match: { params } }) => {
 
     useEffect(() => {
         dispatch(handleGetServiceData(id));
-    }, []);
+    }, [id, dispatch]);
 
     return (
         current && (
