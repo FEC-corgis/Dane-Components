@@ -5,8 +5,9 @@ const axios = require('axios');
 class HostedByRepository {
     constructor(id) {
         this.id = id;
+        this.dataLoaded = true;
         this.data = {
-            photos: {},
+            photos: [],
             location: {},
             reviews: {},
             isSuperhost: false,
@@ -44,12 +45,15 @@ class HostedByRepository {
     }
 
     async getData() {
-        await this.getPhotos();
-        await this.getLocation();
-        await this.getReviews();
-        await this.getSuperhostStatus();
-
-        return this.data;
+        try {
+            await this.getPhotos();
+            await this.getLocation();
+            await this.getReviews();
+            await this.getSuperhostStatus();
+            return this.data;
+        } catch (error) {
+            this.dataLoaded = false;
+        }
     }
 }
 
