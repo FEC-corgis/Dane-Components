@@ -16,11 +16,11 @@ module.exports = class MorePlacesRepository {
     async getReviewsInfo() {
         const { title, hostId } = await Property.findByPk(this.id);
         const { data } = await axios.get(
-            `http://localhost:5002/api/hostedbyService/more-places/${hostId}`
+            `http://localhost:5002/api/hostedbyService/superhost/${hostId}`
         );
 
         this.data.title = title;
-        this.data.isSuperhost = data.isSuperhost;
+        this.data.isSuperhost = data;
     }
 
     async getFirstPhoto() {

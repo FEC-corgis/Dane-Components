@@ -1,8 +1,8 @@
+const axios = require('axios');
 const Photo = require('../models/Photo');
 const Property = require('../models/Property');
-const axios = require('axios');
 
-class HostedByRepository {
+module.exports = class ServiceRepository {
     constructor(id) {
         this.id = id;
         this.dataLoaded = true;
@@ -55,6 +55,4 @@ class HostedByRepository {
             this.dataLoaded = false;
         }
     }
-}
-
-module.exports = HostedByRepository;
+};
