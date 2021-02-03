@@ -1,6 +1,5 @@
 const express = require('express');
-const headerServiceRoutes = require('./controllers/HeaderServiceController');
-const morePlacesRoutes = require('./controllers/morePlacesController/MorePlacesController');
+const { headerServiceRoutes, morePlacesRoutes } = require('./controllers');
 
 const app = express();
 
