@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "webpack serve",
-        "server": "nodemon backend/serverStart.js",
+        "server": "pm2 start backend/serverStart.js --watch --name header",
         "build": "webpack",
         "test": "jest --detectOpenHandles --watchAll"
     },

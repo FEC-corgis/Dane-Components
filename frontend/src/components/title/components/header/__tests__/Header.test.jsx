@@ -11,7 +11,6 @@ test('should render with "share" & "save" text when showIcons state is true', ()
         </Provider>
     );
 
-    expect(screen.getByText('Superhost')).toBeInTheDocument();
     expect(screen.getByText('Share')).toBeInTheDocument();
     expect(screen.getByText('Save')).toBeInTheDocument();
 });
@@ -23,7 +22,6 @@ test('should render with only share & save icons when showIcons state is false',
         </Provider>
     );
 
-    expect(screen.getByText('Superhost')).toBeInTheDocument();
     expect(screen.queryByText('Share')).not.toBeInTheDocument();
     expect(screen.queryByText('Save')).not.toBeInTheDocument();
 });

@@ -8,18 +8,18 @@ import { render, screen } from '@testing-library/react';
 import {
     setPhotos,
     setCurrentPhoto,
-} from '../../../../../../redux/slices/photos/PhotoSlice';
+} from '../../../../../../redux/slices/photos/HeaderServiceSlice';
 
 test('clicking on any photo should activate the main modal, photo 1', async () => {
-    store.dispatch(setPhotos(mockData.photos));
+    store.dispatch(setPhotos(mockData[0].photos));
     store.dispatch(
-        setCurrentPhoto({ current: mockData.photos[0], currentIndex: 0 })
+        setCurrentPhoto({ current: mockData[0].photos[0], currentIndex: 0 })
     );
 
     const handleClick = jest.fn();
     render(
         <Provider store={store}>
-            <AllPhotos photos={mockData.photos} handleClick={handleClick} />
+            <AllPhotos photos={mockData[0].photos} handleClick={handleClick} />
         </Provider>
     );
 

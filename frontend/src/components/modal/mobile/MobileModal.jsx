@@ -4,23 +4,26 @@ import PhotosGrid from './photo/PhotosGrid';
 import FadeIn from './styled-components/FadeIn';
 import MobileModalContainer from './styled-components/MobileModalContainer';
 import { useDispatch, useSelector } from 'react-redux';
-import { handleGroupPhotos } from '../../../redux/slices/photos/PhotoSlice';
+import { getModalState } from '../../../redux/slices/modal/modalSlice';
+import {
+    getPhotoState,
+    handleGroupPhotos,
+} from '../../../redux/slices/photos/HeaderServiceSlice';
 
 const MobileModal = () => {
     const dispatch = useDispatch();
-    const { modal, photos } = useSelector((state) => state);
+    const { showModal } = useSelector(getModalState);
+    const { allPhotos, groups } = useSelector(getPhotoState);
 
     useEffect(() => {
-        dispatch(handleGroupPhotos(photos.allPhotos));
-    }, [photos.allPhotos]);
+        dispatch(handleGroupPhotos(allPhotos));
+    }, [allPhotos, dispatch]);
 
     return (
-        <MobileModalContainer
-            style={{ bottom: modal.showModal ? 0 : '-100vh' }}
-        >
+        <MobileModalContainer style={{ bottom: showModal ? 0 : '-100vh' }}>
             <MobileNav />
             <FadeIn className={'fade-in'}>
-                {photos.groups.map((group, i) => {
+                {groups.map((group, i) => {
                     return (
                         <PhotosGrid
                             key={i}

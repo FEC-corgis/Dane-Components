@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
     getPhotoState,
     handleGetServiceData,
-} from './redux/slices/photos/PhotoSlice';
+} from './redux/slices/photos/HeaderServiceSlice';
 
 const App = ({ match: { params } }) => {
     const dispatch = useDispatch();
@@ -20,12 +20,12 @@ const App = ({ match: { params } }) => {
 
     return (
         current && (
-            <React.Fragment>
+            <section>
                 <ShareModal />
                 <Modal />
                 <MobileModal />
                 <Photos photos={allPhotos} />
-            </React.Fragment>
+            </section>
         )
     );
 };
