@@ -22,6 +22,7 @@ const headerServiceSlice = createSlice({
         host: {
             isSuperhost: false,
         },
+        loading: true,
     },
     reducers: {
         setPhotos: (state, action) => {
@@ -72,6 +73,12 @@ const headerServiceSlice = createSlice({
                 },
             };
         },
+        setLoading: (state, action) => {
+            return {
+                ...state,
+                loading: action.payload,
+            };
+        },
         setState: (state, action) => {
             return {
                 ...state,
@@ -86,6 +93,7 @@ const headerServiceSlice = createSlice({
                 host: {
                     isSuperhost: action.payload.isSuperhost,
                 },
+                loading: false,
             };
         },
     },
@@ -99,6 +107,7 @@ export const {
     setLocation,
     setHost,
     setState,
+    setLoading,
 } = headerServiceSlice.actions;
 
 export const getHeaderState = (state) => state.header;
