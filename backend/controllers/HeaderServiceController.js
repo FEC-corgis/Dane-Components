@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const responses = require('../constants/routeResponses');
-const HostedByRepository = require('../repositories/HostedByRepo');
+const ServiceRepository = require('../repositories/ServiceRepo');
 
 router.get('/:propertyId', async (req, res) => {
     const { propertyId } = req.params;
-    const repo = new HostedByRepository(propertyId);
+    const repo = new ServiceRepository(propertyId);
     try {
         const response = await repo.getData();
         if (!repo.dataLoaded)
