@@ -32,7 +32,11 @@ module.exports = class ServiceRepository {
     }
 
     async getReviews() {
-        this.data.reviews = { rating: 4.52, numberOfReviews: 151 };
+        const { data } = await axios.get(
+            `http://localhost:1984/reviews/header/${this.id}`
+        );
+
+        this.data.reviews = { ...data };
     }
 
     async getSuperhostStatus() {

@@ -8,27 +8,27 @@ import GridSmallItemRight from '../styled-components/GridSmallItemRight';
 import GridImg from '../styled-components/GridImg';
 
 const PhotosGrid = (props) => (
-  <Flex>
-    <PhotoContainer>
-      <PhotoGrid>
-        {props.big && (
-          <GridBigItem>
-            <GridImg src={props.big} alt={'house'} />
-          </GridBigItem>
-        )}
-        {props.left && (
-          <GridSmallItemLeft>
-            <GridImg src={props.left} alt={'house'} />
-          </GridSmallItemLeft>
-        )}
-        {props.right && (
-          <GridSmallItemRight>
-            <GridImg src={props.right} alt={'house'} />
-          </GridSmallItemRight>
-        )}
-      </PhotoGrid>
-    </PhotoContainer>
-  </Flex>
+    <Flex>
+        <PhotoContainer>
+            <PhotoGrid>
+                {props.big && (
+                    <GridBigItem>
+                        <GridImg src={props.big} alt={'house'} />
+                    </GridBigItem>
+                )}
+                {props.left && (
+                    <GridSmallItemLeft>
+                        <GridImg src={props.left} alt={'house'} />
+                    </GridSmallItemLeft>
+                )}
+                {props.right && (
+                    <GridSmallItemRight>
+                        <GridImg src={props.right} alt={'house'} />
+                    </GridSmallItemRight>
+                )}
+            </PhotoGrid>
+        </PhotoContainer>
+    </Flex>
 );
 
 export default PhotosGrid;

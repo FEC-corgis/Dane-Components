@@ -11,5 +11,6 @@ export default styled.div`
 
     @media (max-width: 743px) {
         transition: bottom 0.4s ease-out;
+        background-color: white;
     }
 `;
