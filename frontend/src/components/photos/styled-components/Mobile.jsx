@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export default styled.div`
-	display: none;
+    display: none;
 
-	@media (max-width: 743px) {
-		display: block;
-	}
+    @media (max-width: 743px) {
+        display: block;
+    }
 `;
