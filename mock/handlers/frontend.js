@@ -8,4 +8,7 @@ export const handlers = [
     rest.get('/api/headerService/2', (_req, res, ctx) => {
         return res(ctx.json(mockData[1]));
     }),
+    rest.get('/api/headerService/78', (_req, res, ctx) => {
+        return res(ctx.json(mockData[2]));
+    }),
 ];

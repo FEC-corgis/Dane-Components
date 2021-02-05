@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getServiceData } from './helpers';
+import { getServiceData } from './requestFunctions';
 
 const headerServiceSlice = createSlice({
     name: 'header',
