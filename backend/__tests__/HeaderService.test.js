@@ -10,7 +10,6 @@ afterAll(() => server.close());
 
 test('should query the photos of the property with ID 1', async () => {
     const res = await request(app).get('/api/headerService/1');
-    console.log('RES: ', res.body);
 
     expect(res.status).toEqual(200);
     expect(res.body.photos[0].Property.id).toEqual(1);
