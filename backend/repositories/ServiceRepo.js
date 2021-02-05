@@ -33,7 +33,7 @@ module.exports = class ServiceRepository {
 
     async getReviews() {
         const { data } = await axios.get(
-            `http://localhost:1984/reviews/header/${this.id}`
+            `http://${process.env.REVIEWS_DOMAIN}/reviews/header/${this.id}`
         );
 
         this.data.reviews = { ...data };
@@ -42,7 +42,7 @@ module.exports = class ServiceRepository {
     async getSuperhostStatus() {
         const { hostId } = await Property.findByPk(this.id);
         const { data } = await axios.get(
-            `http://localhost:5002/api/hostedbyService/superhost/${hostId}`
+            `http://${process.env.HOSTEDBY_DOMAIN}/api/hostedbyService/superhost/${hostId}`
         );
 
         this.data.isSuperhost = data;
