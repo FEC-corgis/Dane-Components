@@ -1,6 +1,6 @@
 import React from 'react';
 import AllPhotos from '../../AllPhotos';
-import { mockData } from '../../../../../../mocks/data';
+import { mockData } from '../../../../../../../../mock/mockData/frontend';
 import userEvent from '@testing-library/user-event';
 import { store } from '../../../../../../redux/store';
 import { Provider } from 'react-redux';

@@ -1,6 +1,6 @@
 import React from 'react';
 import AllPhotos from '../../AllPhotos';
-import { mockData } from '../../../../../../mocks/data';
+import { mockData } from '../../../../../../../../mock/mockData/frontend';
 import { store } from '../../../../../../redux/store';
 import { Provider } from 'react-redux';
 import { render, screen } from '@testing-library/react';
