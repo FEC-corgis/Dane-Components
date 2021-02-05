@@ -1,6 +1,6 @@
 const app = require('../server');
 const request = require('supertest');
-const { server } = require('../mock/server');
+const { server } = require('../../mock/server/backend');
 
 beforeAll(() => server.listen());
 
