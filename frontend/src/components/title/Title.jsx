@@ -4,7 +4,7 @@ import PropertyName from './styled-components/PropertyName';
 import TitleContainer from './styled-components/TitleContainer';
 import TitleBox from './styled-components/TitleBox';
 import { useSelector } from 'react-redux';
-import { getPhotoState } from '../../redux/slices/photos/HeaderServiceSlice';
+import { getPhotoState } from '../../redux/slices/header/HeaderServiceSlice';
 
 const Title = (props) => {
     const { allPhotos } = useSelector(getPhotoState);
