@@ -21,7 +21,7 @@ export const mockData = [
                 id: 2,
                 link: 'https://fec-corgis.s3.amazonaws.com/houses/image/2',
                 isMain: false,
-                description: ' Eget mauris pharetra et ultrices neque',
+                description: 'Eget mauris pharetra et ultrices neque',
                 PropertyId: 1,
                 createdAt: '2021-01-21T04:57:30.000Z',
                 updatedAt: '2021-01-21T04:57:30.000Z',
