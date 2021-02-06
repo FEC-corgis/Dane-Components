@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
     getHeaderState,
     handleGetServiceData,
-} from './redux/slices/photos/HeaderServiceSlice';
+} from './redux/slices/header/HeaderServiceSlice';
 
 const App = ({ match: { params } }) => {
     const dispatch = useDispatch();

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { setCurrentPhoto } from '../photos/HeaderServiceSlice';
+import { setCurrentPhoto } from '../header/HeaderServiceSlice';
 
 const modalSlice = createSlice({
     name: 'modal',

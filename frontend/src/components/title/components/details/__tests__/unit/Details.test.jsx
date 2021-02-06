@@ -3,7 +3,7 @@ import Details from '../../Details';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { store } from '../../../../../../redux/store';
-import { handleGetServiceData } from '../../../../../../redux/slices/photos/HeaderServiceSlice';
+import { handleGetServiceData } from '../../../../../../redux/slices/header/HeaderServiceSlice';
 
 test('should render data dynamically from the store', (done) => {
     store.dispatch(handleGetServiceData(1));

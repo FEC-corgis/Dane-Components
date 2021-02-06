@@ -1,6 +1,6 @@
 import React from 'react';
 import AllPhotos from '../../AllPhotos';
-import { mockData } from '../../../../../../mocks/data';
+import { mockData } from '../../../../../../../../mock/mockData/frontend';
 import userEvent from '@testing-library/user-event';
 import { store } from '../../../../../../redux/store';
 import { Provider } from 'react-redux';
@@ -8,7 +8,7 @@ import { render, screen } from '@testing-library/react';
 import {
     setPhotos,
     setCurrentPhoto,
-} from '../../../../../../redux/slices/photos/HeaderServiceSlice';
+} from '../../../../../../redux/slices/header/HeaderServiceSlice';
 
 test('clicking on any photo should activate the main modal, photo 1', async () => {
     store.dispatch(setPhotos(mockData[0].photos));

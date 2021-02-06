@@ -8,7 +8,7 @@ import { getModalState } from '../../../redux/slices/modal/modalSlice';
 import {
     getPhotoState,
     handleGroupPhotos,
-} from '../../../redux/slices/photos/HeaderServiceSlice';
+} from '../../../redux/slices/header/HeaderServiceSlice';
 
 const MobileModal = () => {
     const dispatch = useDispatch();

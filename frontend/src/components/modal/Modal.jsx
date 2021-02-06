@@ -7,7 +7,7 @@ const Modal = () => {
     const { modal, header } = useSelector((state) => state);
 
     return (
-        <ModalContainer showModal={modal.showModal}>
+        <ModalContainer data-testid={'main-modal'} showModal={modal.showModal}>
             <ModalContent photos={header.photos} />
         </ModalContainer>
     );

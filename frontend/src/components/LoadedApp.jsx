@@ -4,7 +4,7 @@ import Modal from './modal/Modal';
 import MobileModal from './modal/mobile/MobileModal';
 import Photos from './photos/Photos';
 import { useSelector } from 'react-redux';
-import { getPhotoState } from '../redux/slices/photos/HeaderServiceSlice';
+import { getPhotoState } from '../redux/slices/header/HeaderServiceSlice';
 
 const LoadingApp = () => {
     const { allPhotos } = useSelector(getPhotoState);

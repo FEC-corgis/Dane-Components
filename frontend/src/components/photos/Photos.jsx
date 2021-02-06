@@ -7,7 +7,7 @@ import Mobile from './styled-components/Mobile';
 import PhotosMobileNav from './components/PhotoMobileNav';
 import { useDispatch } from 'react-redux';
 import { setShowModal } from '../../redux/slices/modal/modalSlice';
-import { handleFindCurrent } from '../../redux/slices/photos/HeaderServiceSlice';
+import { handleFindCurrent } from '../../redux/slices/header/HeaderServiceSlice';
 
 const Photos = (props) => {
     const dispatch = useDispatch();

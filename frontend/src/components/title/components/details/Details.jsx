@@ -5,7 +5,7 @@ import RatingText from './styled-components/RatingText';
 import DetailsContainer from './styled-components/DetailsContainer';
 import { AiTwotoneStar } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
-import { getHeaderState } from '../../../../redux/slices/photos/HeaderServiceSlice';
+import { getHeaderState } from '../../../../redux/slices/header/HeaderServiceSlice';
 
 const Details = () => {
     const { location, reviews, host } = useSelector(getHeaderState);
