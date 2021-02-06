@@ -4,17 +4,19 @@ import Modal from './modal/Modal';
 import MobileModal from './modal/mobile/MobileModal';
 import Photos from './photos/Photos';
 import { useSelector } from 'react-redux';
-import { getPhotoState } from '../redux/slices/header/HeaderServiceSlice';
+import AppContainer from './styled-components/AppContainer';
 
 const LoadingApp = () => {
-    const { allPhotos } = useSelector(getPhotoState);
+    const { header, modal } = useSelector((state) => state);
+    const { allPhotos } = header.photos;
+    const { showModal, showShareModal } = modal;
     return (
-        <section>
+        <AppContainer showModal={showModal} showShareModal={showShareModal}>
             <ShareModal />
             <Modal />
             <MobileModal />
             <Photos photos={allPhotos} />
-        </section>
+        </AppContainer>
     );
 };
 
