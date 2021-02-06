@@ -1,22 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ShareModal from './modal/share/ShareModal';
 import Modal from './modal/Modal';
 import MobileModal from './modal/mobile/MobileModal';
 import Photos from './photos/Photos';
 import { useSelector } from 'react-redux';
-import AppContainer from './styled-components/AppContainer';
 
 const LoadingApp = () => {
     const { header, modal } = useSelector((state) => state);
     const { allPhotos } = header.photos;
     const { showModal, showShareModal } = modal;
+
+    useEffect(() => {
+        const body = document.getElementsByTagName('body')[0];
+
+        if (showModal || showShareModal) {
+            body.style.overflowY = 'hidden';
+        } else {
+            body.style.overflowY = 'visible';
+        }
+    }, [showModal, showShareModal]);
+
     return (
-        <AppContainer showModal={showModal} showShareModal={showShareModal}>
+        <section>
             <ShareModal />
             <Modal />
             <MobileModal />
             <Photos photos={allPhotos} />
-        </AppContainer>
+        </section>
     );
 };
 
