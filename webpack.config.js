@@ -10,7 +10,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'frontend', 'dist'),
         filename: '[name].bundle.js',
-        publicPath: '/',
+        publicPath: 'https://fec-corgis.s3.amazonaws.com/static/',
     },
     module: {
         rules: [
@@ -37,7 +37,7 @@ module.exports = {
         historyApiFallback: true,
         proxy: {
             '/api': {
-                target: 'http://localhost:5000',
+                target: 'http://localhost:5001',
                 secure: false,
                 changeOrigin: true,
             },
@@ -56,7 +56,7 @@ module.exports = {
             ),
             title: 'FEC Corgis',
         }),
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({ filename: 'style.css' }),
     ],
     devtool: 'source-map',
 };
