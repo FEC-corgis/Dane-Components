@@ -12,7 +12,7 @@ app.use(express.json());
 app.use('/api/headerService', headerServiceRoutes);
 app.use('/api/headerService', morePlacesRoutes);
 
-app.get('*', (req, res) => {
+app.get('*', (_req, res) => {
     res.sendFile(join(publicPath));
 });
 
