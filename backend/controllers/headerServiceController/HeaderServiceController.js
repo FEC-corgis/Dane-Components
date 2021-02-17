@@ -7,10 +7,10 @@ router.get('/:propertyId', async (req, res) => {
     const { propertyId } = req.params;
     const repo = new ServiceRepository(propertyId);
     try {
-        const headerData = await repo.getData();
-        if (!repo.dataLoaded)
+        if (propertyId > 100)
             return res.status(404).json(new Response(responses.noHeaderData));
 
+        const headerData = await repo.getData();
         return res.status(200).json(headerData);
     } catch (error) {
         return res.status(500).json(new Response(responses.serverError));

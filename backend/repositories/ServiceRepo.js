@@ -1,11 +1,11 @@
 const axios = require('axios');
+const fallbackData = require('../data/fallbackData');
 const Photo = require('../models/Photo');
 const Property = require('../models/Property');
 
 module.exports = class ServiceRepository {
     constructor(id) {
         this.id = id;
-        this.dataLoaded = true;
         this.data = {
             photos: [],
             location: {},
@@ -15,55 +15,60 @@ module.exports = class ServiceRepository {
     }
 
     async getPhotos() {
-        const photos = await Photo.findAll({
-            where: { PropertyId: this.id },
-            include: [{ model: Property }],
-        });
+        try {
+            const photos = await Photo.findAll({
+                where: { PropertyId: this.id },
+                include: [{ model: Property }],
+            });
 
-        this.data.photos = photos;
+            this.data.photos = photos;
+        } catch (error) {
+            this.data.photos = fallbackData.photos;
+        }
     }
 
     async getLocation() {
-        this.data.location = {
-            city: 'South Lake Tahoe',
-            state: 'California',
-            country: 'United States',
-        };
+        try {
+            const { data } = await axios.get(
+                `http://${process.env.LOCATION_DOMAIN}/reviews/header/${this.id}`
+            );
+
+            this.data.reviews = { ...data };
+        } catch (error) {
+            this.data.location = fallbackData.location;
+        }
     }
 
     async getReviews() {
-        const { data } = await axios.get(
-            `http://${process.env.REVIEWS_DOMAIN}/reviews/header/${this.id}`
-        );
+        try {
+            const { data } = await axios.get(
+                `http://${process.env.REVIEWS_DOMAIN}/reviews/header/${this.id}`
+            );
 
-        this.data.reviews = { ...data };
+            this.data.reviews = { ...data };
+        } catch (error) {
+            this.data.reviews = fallbackData.reviews;
+        }
     }
 
     async getSuperhostStatus() {
-        const { hostId } = await Property.findByPk(this.id);
-        const { data } = await axios.get(
-            `http://${process.env.HOSTEDBY_DOMAIN}/api/hostedbyService/superhost/${hostId}`
-        );
+        try {
+            const { hostId } = await Property.findByPk(this.id);
+            const { data } = await axios.get(
+                `http://${process.env.HOSTEDBY_DOMAIN}/api/hostedbyService/superhost/${hostId}`
+            );
 
-        this.data.isSuperhost = data;
+            this.data.isSuperhost = data;
+        } catch (error) {
+            this.data.isSuperhost = fallbackData.isSuperhost;
+        }
     }
 
     async getData() {
-        try {
-            await this.getPhotos();
-            await this.getLocation();
-            await this.getReviews();
-            await this.getSuperhostStatus();
-            return this.data;
-        } catch (error) {
-            return {
-                ...this.data,
-                isSuperhost: true,
-                reviews: {
-                    rating: '4.28',
-                    numberOfReviews: 50,
-                },
-            };
-        }
+        await this.getPhotos();
+        await this.getLocation();
+        await this.getReviews();
+        await this.getSuperhostStatus();
+        return this.data;
     }
 };
