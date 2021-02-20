@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import AllPhotos from './components/allPhotos/AllPhotos';
 import MainPhoto from './components/MainPhoto';
 import Title from '../title/Title';
@@ -11,12 +11,6 @@ import { handleFindCurrent } from '../../redux/slices/header/HeaderServiceSlice'
 
 const Photos = (props) => {
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        props.photos.forEach((photo) => {
-            new Image().src = photo.link;
-        });
-    }, [props.photos]);
 
     const handleClick = (id) => {
         dispatch(setShowModal(true));
