@@ -10,7 +10,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'frontend', 'dist'),
         filename: '[name].bundle.js',
-        publicPath: 'https://fec-corgis.s3.amazonaws.com/static/',
+        publicPath: '/',
     },
     module: {
         rules: [
