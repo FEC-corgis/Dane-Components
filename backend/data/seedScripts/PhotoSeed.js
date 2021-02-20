@@ -7,7 +7,7 @@ module.exports = (async function () {
 
         for (let i = 1; i < 530; i++) {
             await Photo.create({
-                link: `d399xwipij9vcb.cloudfront.net/houses/image/${i}`,
+                link: `https://d399xwipij9vcb.cloudfront.net/houses/image/${i}`,
                 isMain: i < 500 && i % 5 === 0 ? true : false,
                 description: photoDescription[Math.floor(Math.random() * 100)],
                 PropertyId:
