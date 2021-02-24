@@ -4,9 +4,10 @@ import LoadingTitle from './title/LoadingTitle';
 import LoadingMain from './photos/components/LoadingMain';
 import Desktop from './photos/styled-components/Desktop';
 import Mobile from './photos/styled-components/Mobile';
+import AppSection from './styled-components/AppSection';
 
 const LoadingApp = () => (
-    <section>
+    <AppSection>
         <Desktop>
             <LoadingTitle />
             <LoadingPhotos />
@@ -15,7 +16,7 @@ const LoadingApp = () => (
             <LoadingMain />
             <LoadingTitle />
         </Mobile>
-    </section>
+    </AppSection>
 );
 
 export default LoadingApp;
