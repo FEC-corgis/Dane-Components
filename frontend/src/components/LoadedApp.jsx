@@ -3,6 +3,7 @@ import ShareModal from './modal/share/ShareModal';
 import Modal from './modal/Modal';
 import MobileModal from './modal/mobile/MobileModal';
 import Photos from './photos/Photos';
+import AppSection from './styled-components/AppSection';
 import { useSelector } from 'react-redux';
 
 const LoadingApp = () => {
@@ -21,12 +22,12 @@ const LoadingApp = () => {
     }, [showModal, showShareModal]);
 
     return (
-        <section>
+        <AppSection>
             <ShareModal />
             <Modal />
             <MobileModal />
             <Photos photos={allPhotos} />
-        </section>
+        </AppSection>
     );
 };
 
