@@ -33,7 +33,7 @@ module.exports = class ServiceRepository {
                 `http://${process.env.MAP_DOMAIN}/location/${this.id}`
             );
 
-            this.data.reviews = { ...data };
+            this.data.location = { ...data };
         } catch (error) {
             this.data.location = fallbackData.location;
         }
