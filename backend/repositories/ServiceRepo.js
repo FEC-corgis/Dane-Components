@@ -30,7 +30,7 @@ module.exports = class ServiceRepository {
     async getLocation() {
         try {
             const { data } = await axios.get(
-                `http://${process.env.LOCATION_DOMAIN}/reviews/header/${this.id}`
+                `http://${process.env.MAP_DOMAIN}/location/${this.id}`
             );
 
             this.data.reviews = { ...data };
