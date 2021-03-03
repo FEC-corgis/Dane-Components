@@ -16,7 +16,7 @@ const ShowAllButton = (props) => {
 
     return (
         <ShowAllButtonShell onClick={handleClick}>
-            <SVG src={svg} alt={'show-all'} />
+            <SVG src={`https://fec-corgis.s3.amazonaws.com/static${svg}`} alt={'show-all'} />
             <div>Show all photos</div>
         </ShowAllButtonShell>
     );
